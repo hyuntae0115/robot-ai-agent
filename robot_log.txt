@@ -12,3 +12,24 @@
 [2026-07-04 20:59:26] input=stop | result=Robot stopped
 [2026-07-04 20:59:27] input=status | result=Position: x=0, y=10, z=5, moving=False
 [2026-07-04 21:19:09] input= | result=Empty command
+[2026-07-06 13:01:33] input=status | result=Position: x=0, y=0, z=0, moving=False
+[2026-07-06 13:01:33] input=move forward 10 | result=Moved forward by 10 cm
+[2026-07-06 13:01:33] input=move up 5 | result=Moved up by 5 cm
+[2026-07-06 13:01:33] input=stop | result=Robot stopped
+[2026-07-06 13:01:35] input=status | result=Position: x=0, y=10, z=5, moving=False
+[2026-07-06 13:18:39] input=rotate z 90 | result=No handler found for command: rotate
+[2026-07-06 13:18:39] input=rotate x -30 | result=No handler found for command: rotate
+[2026-07-06 13:18:39] input=rotate a 20 | result=Invalid axis: a
+[2026-07-06 13:18:41] input=rotate y ten | result=Angle must be a number: ten
+[2026-07-06 14:00:47] input=rotate z 350 | result=Rotated z axis by 350°
+[2026-07-06 14:00:47] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=350, moving=False
+[2026-07-06 14:00:47] input=rotate z 20 | result=Rotated z axis by 20°
+[2026-07-06 14:00:47] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=10, moving=False
+[2026-07-06 14:00:47] input=rotate x 90 | result=Rotated x axis by 90°
+[2026-07-06 14:01:03] input=rotate z 350 | result=Rotated z axis by 350°
+[2026-07-06 14:01:03] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=350, moving=False
+[2026-07-06 14:01:03] input=rotate z 20 | result=Rotated z axis by 20°
+[2026-07-06 14:01:03] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=10, moving=False
+[2026-07-06 14:01:03] input=rotate x 90 | result=Rotated x axis by 90°
+[2026-07-06 14:01:31] input=status | result=Position: x=0, y=0, z=0, roll=90, pitch=0, yaw=10, moving=False
+[2026-07-06 14:02:05] input=git add | result=Unknown command: git

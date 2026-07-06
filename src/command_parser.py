@@ -1,6 +1,7 @@
 from command import Command
 
 VALID_DIRECTIONS = ["forward", "backward", "left", "right", "up", "down"]
+VALID_AXES = ["x", "y", "z"]
 
 
 def parse_command(user_input: str) -> dict:
@@ -51,10 +52,31 @@ def parse_command(user_input: str) -> dict:
 
         return {
             "valid": True,
-            "command": Command(
-                "move",
-                [direction, int(distance)]
-            )
+            "command": Command("move", [direction, int(distance)])
+        }
+
+    if command == "rotate":
+        if len(args) != 2:
+            return {"valid": False, "error": "rotate requires 2 arguments"}
+
+        axis = args[0]
+        angle = args[1]
+
+        if axis not in VALID_AXES:
+            return {
+                "valid": False,
+                "error": f"Invalid axis: {axis}"
+            }
+
+        if not angle.lstrip("-").isdigit():
+            return {
+                "valid": False,
+                "error": f"Angle must be a number: {angle}"
+            }
+
+        return {
+            "valid": True,
+            "command": Command("rotate", [axis, int(angle)])
         }
 
     return {
