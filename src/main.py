@@ -2,6 +2,7 @@ from command_parser import parse_command
 from executor import execute
 from robot_state import RobotState
 from logger import log_command
+from agent import process
 
 
 def main():
@@ -17,12 +18,12 @@ def main():
             print("Program ended.")
             break
 
-        parsed = parse_command(user_input)
-        result = execute(parsed, robot_state)
+        parsed_commands = process(user_input)
 
-        log_command(user_input, result)
-
-        print(result)
+        for parsed in parsed_commands:
+            result = execute(parsed, robot_state)
+            log_command(user_input, result)
+            print(result)
 
 
 if __name__ == "__main__":

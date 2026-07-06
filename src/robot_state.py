@@ -20,11 +20,11 @@ class RobotState:
     def get_status(self):
         return (
             f"Position: "
-            f"x={self.x}, "
-            f"y={self.y}, "
-            f"z={self.z}, "
-            f"roll={self.roll}, "
-            f"pitch={self.pitch}, "
-            f"yaw={self.yaw}, "
+            f"x={self.x} mm, "
+            f"y={self.y} mm, "
+            f"z={self.z} mm, "
+            f"roll={self.roll}°, "
+            f"pitch={self.pitch}°, "
+            f"yaw={self.yaw}°, "
             f"moving={self.is_moving}"
         )

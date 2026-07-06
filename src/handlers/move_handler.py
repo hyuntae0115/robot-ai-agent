@@ -22,4 +22,4 @@ def handle(command, robot_state):
 
     robot_state.is_moving = True
 
-    return f"Moved {direction} by {distance} cm"
+    return f"Moved {direction} by {distance} mm"

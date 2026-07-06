@@ -1,35 +1,10 @@
-[2026-07-04 20:32:43] input=c:\Users\hyunt\robot-ai-agent\.venv\Scripts\python.exe c:/Users/hyunt/robot-ai-agent/src/robot_state.py | result=Unknown command: c:\Users\hyunt\robot-ai-agent\.venv\Scripts\python.exe
-[2026-07-04 20:32:49] input=c:\Users\hyunt\robot-ai-agent\.venv\Scripts\python.exe c:/Users/hyunt/robot-ai-agent/src/main.py | result=Unknown command: c:\Users\hyunt\robot-ai-agent\.venv\Scripts\python.exe
-[2026-07-04 20:32:54] input=status | result=Position: x=0, y=0, moving=False
-[2026-07-04 20:43:47] input=status | result=Position: x=0, y=0, z=0, moving=False
-[2026-07-04 20:43:47] input=move up 10 | result=Moved up by 10 cm
-[2026-07-04 20:43:47] input=status | result=Position: x=0, y=0, z=10, moving=True
-[2026-07-04 20:43:47] input=move down 3 | result=Moved down by 3 cm
-[2026-07-04 20:59:26] input=status | result=Position: x=0, y=0, z=0, moving=False
-[2026-07-04 20:59:26] input=move forward 10 | result=Moved forward by 10 cm
-[2026-07-04 20:59:26] input=move up 5 | result=Moved up by 5 cm
-[2026-07-04 20:59:26] input=status | result=Position: x=0, y=10, z=5, moving=True
-[2026-07-04 20:59:26] input=stop | result=Robot stopped
-[2026-07-04 20:59:27] input=status | result=Position: x=0, y=10, z=5, moving=False
-[2026-07-04 21:19:09] input= | result=Empty command
-[2026-07-06 13:01:33] input=status | result=Position: x=0, y=0, z=0, moving=False
-[2026-07-06 13:01:33] input=move forward 10 | result=Moved forward by 10 cm
-[2026-07-06 13:01:33] input=move up 5 | result=Moved up by 5 cm
-[2026-07-06 13:01:33] input=stop | result=Robot stopped
-[2026-07-06 13:01:35] input=status | result=Position: x=0, y=10, z=5, moving=False
-[2026-07-06 13:18:39] input=rotate z 90 | result=No handler found for command: rotate
-[2026-07-06 13:18:39] input=rotate x -30 | result=No handler found for command: rotate
-[2026-07-06 13:18:39] input=rotate a 20 | result=Invalid axis: a
-[2026-07-06 13:18:41] input=rotate y ten | result=Angle must be a number: ten
-[2026-07-06 14:00:47] input=rotate z 350 | result=Rotated z axis by 350°
-[2026-07-06 14:00:47] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=350, moving=False
-[2026-07-06 14:00:47] input=rotate z 20 | result=Rotated z axis by 20°
-[2026-07-06 14:00:47] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=10, moving=False
-[2026-07-06 14:00:47] input=rotate x 90 | result=Rotated x axis by 90°
-[2026-07-06 14:01:03] input=rotate z 350 | result=Rotated z axis by 350°
-[2026-07-06 14:01:03] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=350, moving=False
-[2026-07-06 14:01:03] input=rotate z 20 | result=Rotated z axis by 20°
-[2026-07-06 14:01:03] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=10, moving=False
-[2026-07-06 14:01:03] input=rotate x 90 | result=Rotated x axis by 90°
-[2026-07-06 14:01:31] input=status | result=Position: x=0, y=0, z=0, roll=90, pitch=0, yaw=10, moving=False
-[2026-07-06 14:02:05] input=git add | result=Unknown command: git
+[2026-07-06 20:50:45] input=status | result=Position: x=0, y=0, z=0, roll=0, pitch=0, yaw=0, moving=False
+[2026-07-06 21:11:25] input=앞으로 10 미리 가서 x축으로 34도 회전해 | result=Moved forward by 10 cm
+[2026-07-06 21:11:25] input=앞으로 10 미리 가서 x축으로 34도 회전해 | result=Rotated x axis by 34°
+[2026-07-06 22:06:55] input=앞으로 3미리 움직이고 x축 양의 방향으로 50도 회전시켜 | result=Moved forward by 3.0 cm
+[2026-07-06 22:06:55] input=앞으로 3미리 움직이고 x축 양의 방향으로 50도 회전시켜 | result=Rotated x axis by 50.0°
+[2026-07-06 22:08:32] input=앞으로 3미리 움직여 | result=Moved forward by 3.0 cm
+[2026-07-06 22:20:56] input=앞으로 3미리 움직이고 x축 양의 방향으로 50도 회전시켜 | result=Moved forward by 3.0 mm
+[2026-07-06 22:20:56] input=앞으로 3미리 움직이고 x축 양의 방향으로 50도 회전시켜 | result=Rotated x axis by 50.0°
+[2026-07-06 22:56:09] input=앞으로 10 미리 가서 x축으로 34도 회전해 | result=Moved forward by 10.0 mm
+[2026-07-06 22:56:09] input=앞으로 10 미리 가서 x축으로 34도 회전해 | result=Rotated x axis by 34.0°
