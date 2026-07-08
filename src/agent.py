@@ -9,14 +9,17 @@ from command import Command
 from units import convert_distance_to_mm, convert_angle_to_deg
 
 
+# 프로젝트 루트 경로
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# .env 파일 경로
 ENV_PATH = BASE_DIR / ".env"
 
+# Prompt 파일 경로
+PROMPT_PATH = BASE_DIR / "prompts" / "ai_command_prompt.txt"
+
+# 환경변수 로드
 load_dotenv(dotenv_path=ENV_PATH)
-
-
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-PROMPT_PATH = PROJECT_ROOT / "prompts" / "ai_command_prompt.txt"
 
 cerebras_api_key = os.getenv("CEREBRAS_API_KEY")
 
@@ -27,6 +30,7 @@ if not cerebras_api_key:
 
 os.environ["CEREBRAS_API_KEY"] = cerebras_api_key
 
+# LLM 생성
 llm = ChatCerebras(
     model="gpt-oss-120b",
     base_url="https://api.cerebras.ai/v1"
@@ -46,7 +50,10 @@ def json_to_command(item: dict) -> dict:
 
             return {
                 "valid": True,
-                "command": Command("move", [direction, distance_mm])
+                "command": Command(
+                    "move",
+                    [direction, distance_mm]
+                )
             }
 
         if command_name == "rotate":
@@ -58,7 +65,10 @@ def json_to_command(item: dict) -> dict:
 
             return {
                 "valid": True,
-                "command": Command("rotate", [axis, angle_deg])
+                "command": Command(
+                    "rotate",
+                    [axis, angle_deg]
+                )
             }
 
         if command_name == "status":
@@ -90,6 +100,7 @@ def json_to_command(item: dict) -> dict:
             "error": str(error)
         }
 
+
 def process(user_input: str):
 
     with open(PROMPT_PATH, "r", encoding="utf-8") as file:
@@ -104,10 +115,20 @@ def process(user_input: str):
 
     try:
         data = json.loads(raw_output)
+
     except json.JSONDecodeError:
         return [{
             "valid": False,
             "error": f"Invalid JSON from LLM: {raw_output}"
+        }]
+
+    if isinstance(data, dict):
+        data = [data]
+
+    if not isinstance(data, list):
+        return [{
+            "valid": False,
+            "error": "LLM output must be a JSON object or array"
         }]
 
     parsed_commands = []
@@ -115,4 +136,4 @@ def process(user_input: str):
     for item in data:
         parsed_commands.append(json_to_command(item))
 
-    return parsed_commands
+    return parsed_commands, raw_output

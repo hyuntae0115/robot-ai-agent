@@ -1,7 +1,5 @@
-from executor import execute
 from robot_state import RobotState
-from logger import log_command
-from agent import process
+from controller import handle_user_input
 
 
 def main():
@@ -14,14 +12,11 @@ def main():
         user_input = input("> ")
 
         if user_input == "exit":
-            print("Program ended.")
             break
 
-        parsed_commands = process(user_input)
+        results = handle_user_input(user_input, robot_state)
 
-        for parsed in parsed_commands:
-            result = execute(parsed, robot_state)
-            log_command(user_input, result)
+        for result in results:
             print(result)
 
 

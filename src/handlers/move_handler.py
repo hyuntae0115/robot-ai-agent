@@ -20,6 +20,9 @@ def handle(command, robot_state):
     elif direction == "down":
         robot_state.z -= distance
 
+    else:
+        return f"Unknown move direction: {direction}"
+
     robot_state.is_moving = True
 
     return f"Moved {direction} by {distance} mm"

@@ -9,15 +9,10 @@ HANDLERS = {
     "status": status_handle,
     "stop": stop_handle,
     "rotate": rotate_handle
-}   
+}
 
 
-def execute(parsed_command: dict, robot_state) -> str:
-    if not parsed_command["valid"]:
-        return parsed_command["error"]
-
-    command = parsed_command["command"]
-
+def execute(command, robot_state) -> str:
     handler = HANDLERS.get(command.name)
 
     if handler is None:

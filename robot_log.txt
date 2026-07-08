@@ -8,3 +8,34 @@
 [2026-07-06 22:20:56] input=앞으로 3미리 움직이고 x축 양의 방향으로 50도 회전시켜 | result=Rotated x axis by 50.0°
 [2026-07-06 22:56:09] input=앞으로 10 미리 가서 x축으로 34도 회전해 | result=Moved forward by 10.0 mm
 [2026-07-06 22:56:09] input=앞으로 10 미리 가서 x축으로 34도 회전해 | result=Rotated x axis by 34.0°
+[2026-07-07 18:59:21] input=앞으로 한 8미리 움직이고 왼쪽으로 4센티 움직여봐 | result=Moved forward by 8.0 mm
+[2026-07-07 18:59:21] input=앞으로 한 8미리 움직이고 왼쪽으로 4센티 움직여봐 | result=Moved left by 40.0 mm
+[2026-07-07 19:04:07] input=status | result=Position: x=0 mm, y=0 mm, z=0 mm, roll=0°, pitch=0°, yaw=0°, moving=False
+[2026-07-07 19:04:29] input=앞으로 20미리 왼쪽으로 6센티 가봐 | result=Moved forward by 20.0 mm
+[2026-07-07 19:04:29] input=앞으로 20미리 왼쪽으로 6센티 가봐 | result=Moved left by 60.0 mm
+[2026-07-07 19:05:34] input=status | result=Position: x=-60.0 mm, y=20.0 mm, z=0 mm, roll=0°, pitch=0°, yaw=0°, moving=True
+[2026-07-08 15:55:36] input=status | result=Position: x=0 mm, y=0 mm, z=0 mm, roll=0°, pitch=0°, yaw=0°, moving=False
+[2026-07-08 16:02:30] input=앞으로 30센티 y축 음의 방향으로 30 도 회전 | result=Moved forward by 300.0 mm
+[2026-07-08 16:02:30] input=앞으로 30센티 y축 음의 방향으로 30 도 회전 | result=Rotated y axis by -30.0°
+[2026-07-08 16:10:08] input=앞으로 3미리 뒤로 5미리 움직이고 X축으로30도 회전시켜 | result=Moved forward by 3.0 mm
+[2026-07-08 16:10:08] input=앞으로 3미리 뒤로 5미리 움직이고 X축으로30도 회전시켜 | result=Moved backward by 5.0 mm
+[2026-07-08 16:10:08] input=앞으로 3미리 뒤로 5미리 움직이고 X축으로30도 회전시켜 | result=Rotated x axis by 30.0°
+[2026-07-08 16:10:35] input=다시 뒤로 2미리 Y 축으로 35도 | result=Moved backward by 2.0 mm
+[2026-07-08 16:10:35] input=다시 뒤로 2미리 Y 축으로 35도 | result=Rotated y axis by 35.0°
+[2026-07-08 16:14:08] input=앞으로3미리 뒤로1미리 움직여 | result=Moved forward by 3.0 mm
+[2026-07-08 16:14:08] input=앞으로3미리 뒤로1미리 움직여 | result=Moved backward by 1.0 mm
+[2026-07-08 16:14:23] input=x축으로39 도 회전시켜 | result=Rotated x axis by 39.0°
+[2026-07-08 16:14:31] input=앞으로3미리 뒤로1미리 움직여 | result=Moved forward by 3.0 mm
+[2026-07-08 16:14:31] input=앞으로3미리 뒤로1미리 움직여 | result=Moved backward by 1.0 mm
+[2026-07-08 16:14:35] input=앞으로3미리 뒤로1미리 움직여 | result=Moved forward by 3.0 mm
+[2026-07-08 16:14:35] input=앞으로3미리 뒤로1미리 움직여 | result=Moved backward by 1.0 mm
+[2026-07-08 16:14:38] input=앞으로3미리 뒤로1미리 움직여 | result=Moved forward by 3.0 mm
+[2026-07-08 16:14:38] input=앞으로3미리 뒤로1미리 움직여 | result=Moved backward by 1.0 mm
+[2026-07-08 16:18:40] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved forward by 3.0 mm
+[2026-07-08 16:18:40] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved left by 5.0 mm
+[2026-07-08 16:19:02] input=x축으로 5도 z축으로 4도 | result=Rotated x axis by 5.0°
+[2026-07-08 16:19:02] input=x축으로 5도 z축으로 4도 | result=Rotated z axis by 4.0°
+[2026-07-08 16:19:15] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved forward by 3.0 mm
+[2026-07-08 16:19:15] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved left by 5.0 mm
+[2026-07-08 16:19:23] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved forward by 3.0 mm
+[2026-07-08 16:19:23] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved left by 5.0 mm

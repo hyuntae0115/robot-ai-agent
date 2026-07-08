@@ -18,4 +18,7 @@ def handle(command, robot_state):
             robot_state.yaw + angle
         )
 
+    else:
+        return f"Unknown rotation axis: {axis}"
+
     return f"Rotated {axis} axis by {angle}°"
