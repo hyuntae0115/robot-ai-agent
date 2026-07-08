@@ -39,3 +39,9 @@
 [2026-07-08 16:19:15] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved left by 5.0 mm
 [2026-07-08 16:19:23] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved forward by 3.0 mm
 [2026-07-08 16:19:23] input=앞으로 3미리 왼쪽으로 5미리 움직여 | result=Moved left by 5.0 mm
+[2026-07-08 18:27:59] input=앞으로 100 mm 이동 | result=Moved forward by 100.0 mm
+[2026-07-08 19:11:38] input=앞으로 5미리 오른쪽으로 3센티 x 축으로 34도 회전시켜 | result=Moved forward by 5.0 mm
+[2026-07-08 19:11:38] input=앞으로 5미리 오른쪽으로 3센티 x 축으로 34도 회전시켜 | result=Moved right by 30.0 mm
+[2026-07-08 19:11:38] input=앞으로 5미리 오른쪽으로 3센티 x 축으로 34도 회전시켜 | result=Rotated x axis by 34.0°
+[2026-07-08 19:14:52] input=5미리 앞으로 움직여 | result=Moved forward by 5.0 mm
+[2026-07-08 19:14:57] input=3센티 뒤로 움직여 | result=Moved backward by 30.0 mm

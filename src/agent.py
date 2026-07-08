@@ -7,6 +7,7 @@ from langchain_cerebras import ChatCerebras
 
 from command import Command
 from units import convert_distance_to_mm, convert_angle_to_deg
+from typing import Any
 
 
 # 프로젝트 루트 경로
@@ -120,7 +121,7 @@ def process(user_input: str):
         return [{
             "valid": False,
             "error": f"Invalid JSON from LLM: {raw_output}"
-        }]
+        }], raw_output
 
     if isinstance(data, dict):
         data = [data]
@@ -129,7 +130,7 @@ def process(user_input: str):
         return [{
             "valid": False,
             "error": "LLM output must be a JSON object or array"
-        }]
+        }], raw_output
 
     parsed_commands = []
 

@@ -3,12 +3,19 @@ import tkinter as tk
 from robot_state import RobotState
 from controller import handle_user_input
 
+from voice import listen_voice
 
 robot_state = RobotState()
 
 command_history = []
 history_index = -1
 
+def run_voice_command():
+    voice_text = listen_voice()
+
+    command_entry.delete(0, tk.END)
+    command_entry.insert(0, voice_text)
+    command_entry.focus_set()
 
 def run_text_command(event=None):
     global history_index
@@ -44,6 +51,21 @@ def show_previous_command(event=None):
     command_entry.delete(0, tk.END)
     command_entry.insert(0, command_history[history_index])
 
+def show_next_command(event=None):
+    global history_index
+
+    if not command_history:
+        return
+
+    if history_index < len(command_history) - 1:
+        history_index += 1
+
+        command_entry.delete(0, tk.END)
+        command_entry.insert(0, command_history[history_index])
+    else:
+        history_index = len(command_history)
+        command_entry.delete(0, tk.END)
+
 
 def show_llm_json(text):
     json_text.insert(tk.END, text + "\n\n")
@@ -74,9 +96,13 @@ command_entry.pack(pady=5)
 
 command_entry.bind("<Return>", run_text_command)
 command_entry.bind("<Up>", show_previous_command)
+command_entry.bind("<Down>", show_next_command)
 
 run_button = tk.Button(root, text="텍스트 실행", command=run_text_command)
 run_button.pack(pady=5)
+
+voice_button = tk.Button(root, text="음성 인식", command=run_voice_command)
+voice_button.pack(pady=5)
 
 json_label = tk.Label(root, text="LLM JSON")
 json_label.pack()
