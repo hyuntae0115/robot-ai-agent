@@ -42,21 +42,6 @@ def json_to_command(item: dict) -> dict:
     command_name = item.get("command")
 
     try:
-        if command_name == "move":
-            direction = item["direction"]
-            distance = float(item["distance"])
-            unit = item["unit"]
-
-            distance_mm = convert_distance_to_mm(distance, unit)
-
-            return {
-                "valid": True,
-                "command": Command(
-                    "move",
-                    [direction, distance_mm]
-                )
-            }
-
         if command_name == "rotate":
             axis = item["axis"]
             angle = float(item["angle"])
@@ -66,22 +51,46 @@ def json_to_command(item: dict) -> dict:
 
             return {
                 "valid": True,
-                "command": Command(
+                "command":Command(
                     "rotate",
-                    [axis, angle_deg]
+                    axis=axis,
+                    angle=angle_deg
                 )
             }
+        
+        if command_name == "machine":
+            material = item.get("material")
+            rpm = item.get("rpm")
+            depth = item.get("depth")
+            tool = item.get("tool")
 
+            if rpm is not None:
+                rpm = int(rpm)
+
+            if depth is not None:
+                depth = float(depth)
+
+            return {
+                "valid": True,
+                "command": Command(
+                    "machine",
+                    material=material,
+                    rpm=rpm,
+                    depth=depth,
+                    tool=tool
+                )
+            }
+        
         if command_name == "status":
             return {
                 "valid": True,
-                "command": Command("status", [])
+                "command": Command("status")
             }
 
         if command_name == "stop":
             return {
                 "valid": True,
-                "command": Command("stop", [])
+                "command": Command("stop")
             }
 
         return {

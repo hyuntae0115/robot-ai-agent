@@ -1,6 +1,6 @@
 def handle(command, robot_state):
-    direction = command.args[0]
-    distance = command.args[1]
+    direction = command.args["direction"]
+    distance = command.args["distance"]
 
     if direction == "forward":
         robot_state.y += distance

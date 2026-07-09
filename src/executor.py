@@ -2,13 +2,15 @@ from handlers.move_handler import handle as move_handle
 from handlers.status_handler import handle as status_handle
 from handlers.stop_handler import handle as stop_handle
 from handlers.rotate_handler import handle as rotate_handle
+from handlers.machine_handler import handle as machine_handle
 
 
 HANDLERS = {
     "move": move_handle,
     "status": status_handle,
     "stop": stop_handle,
-    "rotate": rotate_handle
+    "rotate": rotate_handle,
+    "machine": machine_handle
 }
 
 

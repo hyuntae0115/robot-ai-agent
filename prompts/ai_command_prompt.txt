@@ -4,41 +4,165 @@ Convert the user's request into JSON.
 
 Available commands:
 
-1. Move:
+1. Move
+
 {{
   "command": "move",
   "direction": "forward | backward | left | right | up | down",
-  "distance": integer
+  "distance": integer,
+  "unit": "mm | cm | m"
 }}
 
-2. Rotate:
+2. Rotate
+
 {{
   "command": "rotate",
   "axis": "x | y | z",
-  "angle": integer
+  "angle": integer,
+  "unit": "deg | rad"
 }}
 
-3. Status:
+3. Status
+
 {{
   "command": "status"
 }}
 
-4. Stop:
+4. Stop
+
 {{
   "command": "stop"
 }}
 
-Rules:
-- Return ONLY valid JSON.
-- Do not use markdown.
-- Do not explain anything.
-- If there are multiple actions, return a JSON array.
-- If there is only one action, still return a JSON array.
-- Distance and angle must be numbers.
-- Always include unit for move and rotate commands.
-- For distance units, use only: mm, cm, m.
-- For angle units, use only: deg, rad.
-- Do not use "degree", "degrees", "meter", "meters", "centimeter", or "millimeter".
+5. Machine
+
+{{
+  "command": "machine",
+  "pose": {{
+    "x": number,
+    "y": number,
+    "z": number,
+    "roll": number,
+    "pitch": number,
+    "yaw": number
+  }},
+  "material": "aluminum | steel | plastic | copper | null",
+  "rpm": integer,
+  "depth": number,
+  "tool": "endmill | drill | ballmill | null"
+}}
 
 User:
 {user_input}
+
+Axis mapping:
+
+- +x → right
+- -x → left
+- +y → forward
+- -y → backward
+- +z → up
+- -z → down
+
+If the user gives movement along multiple axes, return multiple move commands in the JSON array.
+
+Machine command rules:
+
+- Use the "machine" command whenever the user specifies machining conditions.
+- pose is optional.
+- material is optional.
+- rpm is optional.
+- depth is optional.
+- tool is optional.
+- If a value is not provided, return null.
+- Do NOT invent missing values.
+- rpm must be an integer.
+- depth is expressed in millimeters.
+- If the user says cm or m for depth, convert it to mm.
+- pose means the target TCP pose for machining.
+- pose includes x, y, z, roll, pitch, and yaw.
+- If only some pose values are provided, fill missing pose values with null.
+
+Examples
+
+User:
+Move forward 100 mm.
+
+[
+  {{
+    "command":"move",
+    "direction":"forward",
+    "distance":100,
+    "unit":"mm"
+  }}
+]
+
+User:
+Rotate z axis by 90 degrees.
+
+[
+  {{
+    "command":"rotate",
+    "axis":"z",
+    "angle":90,
+    "unit":"deg"
+  }}
+]
+
+User:
+Move 3 cm in x, 2 cm in y, and 8 cm in z.
+
+[
+  {{
+    "command":"move",
+    "direction":"right",
+    "distance":3,
+    "unit":"cm"
+  }},
+  {{
+    "command":"move",
+    "direction":"forward",
+    "distance":2,
+    "unit":"cm"
+  }},
+  {{
+    "command":"move",
+    "direction":"up",
+    "distance":8,
+    "unit":"cm"
+  }}
+]
+
+User:
+Machine aluminum at x=100, y=200, z=30, roll=0, pitch=15, yaw=90 with 3000 rpm, 5 mm depth, using an endmill.
+
+[
+  {{
+    "command":"machine",
+    "pose": {{
+      "x":100,
+      "y":200,
+      "z":30,
+      "roll":0,
+      "pitch":15,
+      "yaw":90
+    }},
+    "material":"aluminum",
+    "rpm":3000,
+    "depth":5,
+    "tool":"endmill"
+  }}
+]
+
+Rules:
+
+- Return ONLY valid JSON.
+- Never return markdown.
+- Never explain the output.
+- Always return a JSON array, even for a single command.
+- Distance must be an integer.
+- Angle must be an integer.
+- Always include the unit for move and rotate commands.
+- Use only: mm, cm, m for distance units.
+- Use only: deg, rad for angle units.
+- Do not use words such as "degree", "degrees", "meter", "meters", "centimeter", or "millimeter" in the JSON.

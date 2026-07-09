@@ -49,3 +49,22 @@
 [2026-07-08 23:08:27] input=앞으로 3cm 오른쪽 5.3cm | result=Moved right by 53.0 mm
 [2026-07-08 23:09:25] input=앞으로 3cm 왼쪽으로 3cm | result=Moved forward by 30.0 mm
 [2026-07-08 23:09:25] input=앞으로 3cm 왼쪽으로 3cm | result=Moved left by 30.0 mm
+[2026-07-09 14:32:08] input=앞으로 3센티 왼쪽으로 4센티 움직여봐 | result=Moved forward by 30.0 mm
+[2026-07-09 14:32:08] input=앞으로 3센티 왼쪽으로 4센티 움직여봐 | result=Moved left by 40.0 mm
+[2026-07-09 14:32:56] input=x축으로 3센티 y축으로 2센티 z축으로 8센티 움직여 | result=Moved forward by 30.0 mm
+[2026-07-09 14:32:56] input=x축으로 3센티 y축으로 2센티 z축으로 8센티 움직여 | result=Moved right by 20.0 mm
+[2026-07-09 14:32:56] input=x축으로 3센티 y축으로 2센티 z축으로 8센티 움직여 | result=Moved up by 80.0 mm
+[2026-07-09 14:45:38] input=x 축으로 3센티 y축으로 2센티 z축으로 8센티 움직여 | result=Moved right by 30.0 mm
+[2026-07-09 14:45:38] input=x 축으로 3센티 y축으로 2센티 z축으로 8센티 움직여 | result=Moved forward by 20.0 mm
+[2026-07-09 14:45:38] input=x 축으로 3센티 y축으로 2센티 z축으로 8센티 움직여 | result=Moved up by 80.0 mm
+[2026-07-09 14:48:35] input=위쪽으로 5센티 아래로 2센티 움직여 | result=Moved up by 50.0 mm
+[2026-07-09 14:48:35] input=위쪽으로 5센티 아래로 2센티 움직여 | result=Moved down by 20.0 mm
+[2026-07-09 14:49:04] input=오른쪽으로 3센티 움직여 | result=Moved right by 30.0 mm
+[2026-07-09 14:58:58] input=왼쪽으로 3센티 앞으로 2센티 ㄱㄱ | result=Moved left by 30.0 mm
+[2026-07-09 14:58:58] input=왼쪽으로 3센티 앞으로 2센티 ㄱㄱ | result=Moved forward by 20.0 mm
+[2026-07-09 17:20:36] input=알루미늄을 x 100 y 200 z 30 위치에서 roll 0 pitch 15 yaw 90 자세로 3000rpm, 5mm 깊이, 엔드밀로 가공해 | result=Machine setting updated
+Pose: {'x': None, 'y': None, 'z': None, 'roll': None, 'pitch': None, 'yaw': None}
+Material: aluminum
+RPM: 3000
+Depth: 5.0 mm
+Tool: endmill

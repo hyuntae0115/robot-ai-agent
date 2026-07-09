@@ -1,7 +1,4 @@
 class Command:
-    def __init__(self, name, args):
+    def __init__(self, name: str, **kwargs):
         self.name = name
-        self.args = args
-
-    def __str__(self):
-        return f"Command(name={self.name}, args={self.args})"
+        self.args = kwargs
