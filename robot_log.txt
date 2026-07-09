@@ -45,3 +45,7 @@
 [2026-07-08 19:11:38] input=앞으로 5미리 오른쪽으로 3센티 x 축으로 34도 회전시켜 | result=Rotated x axis by 34.0°
 [2026-07-08 19:14:52] input=5미리 앞으로 움직여 | result=Moved forward by 5.0 mm
 [2026-07-08 19:14:57] input=3센티 뒤로 움직여 | result=Moved backward by 30.0 mm
+[2026-07-08 23:08:27] input=앞으로 3cm 오른쪽 5.3cm | result=Moved forward by 30.0 mm
+[2026-07-08 23:08:27] input=앞으로 3cm 오른쪽 5.3cm | result=Moved right by 53.0 mm
+[2026-07-08 23:09:25] input=앞으로 3cm 왼쪽으로 3cm | result=Moved forward by 30.0 mm
+[2026-07-08 23:09:25] input=앞으로 3cm 왼쪽으로 3cm | result=Moved left by 30.0 mm
