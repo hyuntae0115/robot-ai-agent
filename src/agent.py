@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from langchain_cerebras import ChatCerebras
+from openai import OpenAI
 
 from command import Command
 from units import convert_distance_to_mm, convert_angle_to_deg
@@ -22,26 +22,36 @@ PROMPT_PATH = BASE_DIR / "prompts" / "ai_command_prompt.txt"
 # 환경변수 로드
 load_dotenv(dotenv_path=ENV_PATH)
 
-cerebras_api_key = os.getenv("CEREBRAS_API_KEY")
 
-if not cerebras_api_key:
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+if not openai_api_key:
     raise ValueError(
-        f"CEREBRAS_API_KEY is not loaded. Check .env file path: {ENV_PATH}"
+        f"OPENAI_API_KEY is not loaded. Check .env file path: {ENV_PATH}"
     )
 
-os.environ["CEREBRAS_API_KEY"] = cerebras_api_key
-
-# LLM 생성
-llm = ChatCerebras(
-    model="gpt-oss-120b",
-    base_url="https://api.cerebras.ai/v1"
-)
-
+client = OpenAI(api_key=openai_api_key)
 
 def json_to_command(item: dict) -> dict:
     command_name = item.get("command")
 
     try:
+        if command_name == "move":
+            direction = item["direction"]
+            distance = float(item["distance"])
+            unit = item["unit"]
+
+            distance_mm = convert_distance_to_mm(distance, unit)
+
+            return {
+                "valid": True,
+                "command": Command(
+                    "move",
+                    direction=direction,
+                    distance=distance_mm
+                )
+            }
+
         if command_name == "rotate":
             axis = item["axis"]
             angle = float(item["angle"])
@@ -59,6 +69,7 @@ def json_to_command(item: dict) -> dict:
             }
         
         if command_name == "machine":
+            pose = item.get("pose")
             material = item.get("material")
             rpm = item.get("rpm")
             depth = item.get("depth")
@@ -74,6 +85,7 @@ def json_to_command(item: dict) -> dict:
                 "valid": True,
                 "command": Command(
                     "machine",
+                    pose=pose,
                     material=material,
                     rpm=rpm,
                     depth=depth,
@@ -118,8 +130,12 @@ def process(user_input: str):
 
     prompt = prompt.format(user_input=user_input)
 
-    response = llm.invoke(prompt)
-    raw_output = str(response.content).strip()
+    response = client.responses.create(
+        model="gpt-4.1-mini",
+        input=prompt
+    )   
+
+    raw_output = response.output_text.strip()
 
     print(f"LLM JSON Output:\n{raw_output}")
 

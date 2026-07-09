@@ -68,3 +68,12 @@ Material: aluminum
 RPM: 3000
 Depth: 5.0 mm
 Tool: endmill
+[2026-07-09 18:00:07] input=x축으로 3cm y축으로 2cm z축으로 8cm 움직여 | result=Moved right by 30.0 mm
+[2026-07-09 18:00:07] input=x축으로 3cm y축으로 2cm z축으로 8cm 움직여 | result=Moved forward by 20.0 mm
+[2026-07-09 18:00:07] input=x축으로 3cm y축으로 2cm z축으로 8cm 움직여 | result=Moved up by 80.0 mm
+[2026-07-09 18:03:17] input=알루미늄을 x=100 y=200 z=30 위치에서 roll 0 pitch 15 yaw 90 자세로 엔드밀을 사용하여 3000rpm으로 5mm 깊이 가공해 | result=Machine setting updated
+Pose: {'x': 100, 'y': 200, 'z': 30, 'roll': 0, 'pitch': 15, 'yaw': 90}
+Material: aluminum
+RPM: 3000
+Depth: 5.0 mm
+Tool: endmill
