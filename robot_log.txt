@@ -77,3 +77,12 @@ Material: aluminum
 RPM: 3000
 Depth: 5.0 mm
 Tool: endmill
+[2026-07-09 22:30:11] input=왼쪽으로 삼색치 | result=Moved left by 30.0 mm
+[2026-07-10 17:20:00] input=앞으로 3센티 이동 | result=Moved forward by 30.0 mm
+[2026-07-10 17:31:30] input=x10cm y5cm z2mm 에서 roll 45도로 엔드밀 가공을 할건데 rpm 은 300으로 | result=Machine setting updated
+Pose: {'x': 100, 'y': 50, 'z': 2, 'roll': 45, 'pitch': None, 'yaw': None}
+Material: None
+RPM: 300
+Depth: 0 mm
+Tool: endmill
+[2026-07-10 17:32:01] input=x축으로 2센티 더 가 | result=Moved right by 20.0 mm

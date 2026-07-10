@@ -1,28 +1,23 @@
-from executor import execute
 from robot_state import RobotState
-from logger import log_command
-from agent import process
+from interfaces.console import run_console
+from interfaces.test_gui import run_gui
 
 
 def main():
     robot_state = RobotState()
 
-    print("Robot AI Agent started.")
-    print("Type 'exit' to quit.")
+    mode = input(
+        "실행 모드 선택 [console/gui]: "
+    ).strip().lower()
 
-    while True:
-        user_input = input("> ")
+    if mode == "console":
+        run_console(robot_state)
 
-        if user_input == "exit":
-            print("Program ended.")
-            break
+    elif mode == "gui":
+        run_gui(robot_state)
 
-        parsed_commands = process(user_input)
-
-        for parsed in parsed_commands:
-            result = execute(parsed, robot_state)
-            log_command(user_input, result)
-            print(result)
+    else:
+        print("지원하지 않는 실행 모드입니다.")
 
 
 if __name__ == "__main__":

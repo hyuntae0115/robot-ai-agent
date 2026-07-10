@@ -31,7 +31,7 @@ def listen_voice():
         language="ko"
     )
 
-    text = result["text"].strip()
+    text = result["text"].strip() # type: ignore
     print(f"Recognized: {text}")
 
     return text
