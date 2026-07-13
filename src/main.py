@@ -1,10 +1,10 @@
-from machining_settings import Machining_Settings
+from machining_settings import MachiningSettings
 from interfaces.console import run_console
 from interfaces.test_gui import run_gui
 
 
 def main():
-    machining_settings = Machining_Settings()
+    machining_settings = MachiningSettings()
 
     mode = input(
         "실행 모드 선택 [console/gui]: "

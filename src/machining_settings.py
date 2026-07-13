@@ -1,4 +1,4 @@
-class Machining_Settings:
+class MachiningSettings:
     def __init__(self):
         self.target_pose = {
             "x": None,
