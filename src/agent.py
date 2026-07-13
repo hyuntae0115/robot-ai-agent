@@ -36,40 +36,30 @@ def json_to_command(item: dict) -> dict:
     command_name = item.get("command")
 
     try:
-        if command_name == "move":
-            direction = item["direction"]
-            distance = float(item["distance"])
-            unit = item["unit"]
+        if command_name == "target":
+            pose = item["pose"]
 
-            distance_mm = convert_distance_to_mm(distance, unit)
+            distance_unit = item["distance_unit"]
+            angle_unit = item["angle_unit"]
+
+            converted_pose = {
+                "x": convert_distance_to_mm(pose["x"], distance_unit),
+                "y": convert_distance_to_mm(pose["y"], distance_unit),
+                "z": convert_distance_to_mm(pose["z"], distance_unit),
+                "roll": convert_angle_to_deg(pose["roll"], angle_unit),
+                "pitch": convert_angle_to_deg(pose["pitch"], angle_unit),
+                "yaw": convert_angle_to_deg(pose["yaw"], angle_unit),
+            }
 
             return {
                 "valid": True,
                 "command": Command(
-                    "move",
-                    direction=direction,
-                    distance=distance_mm
+                    "target",
+                    pose=converted_pose
                 )
             }
 
-        if command_name == "rotate":
-            axis = item["axis"]
-            angle = float(item["angle"])
-            unit = item["unit"]
-
-            angle_deg = convert_angle_to_deg(angle, unit)
-
-            return {
-                "valid": True,
-                "command":Command(
-                    "rotate",
-                    axis=axis,
-                    angle=angle_deg
-                )
-            }
-        
         if command_name == "machine":
-            pose = item.get("pose")
             material = item.get("material")
             rpm = item.get("rpm")
             depth = item.get("depth")
@@ -78,19 +68,30 @@ def json_to_command(item: dict) -> dict:
             if rpm is not None:
                 rpm = int(rpm)
 
+                if rpm <= 0:
+                    return {
+                        "valid": False,
+                        "error": "RPM must be greater than 0."
+                    }
+
             if depth is not None:
                 depth = float(depth)
+
+                if depth < 0:
+                    return {
+                        "valid": False,
+                        "error": "Depth cannot be negative."
+                    }
 
             return {
                 "valid": True,
                 "command": Command(
-                    "machine",
-                    pose=pose,
+            "machine",
                     material=material,
                     rpm=rpm,
                     depth=depth,
                     tool=tool
-                )
+                )   
             }
         
         if command_name == "status":

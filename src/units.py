@@ -26,3 +26,12 @@ def convert_angle_to_deg(value, unit):
         return math.degrees(value)
 
     raise ValueError(f"Unsupported angle unit: {unit}")
+
+def normalize_angle(angle):
+    while angle < 0:
+        angle += 360
+
+    while angle >= 360:
+        angle -= 360
+
+    return angle
