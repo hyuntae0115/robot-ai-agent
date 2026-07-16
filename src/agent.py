@@ -4,9 +4,9 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from openai import OpenAI
+from units import convert_distance_to_mm
 
 from command import Command
-from units import convert_distance_to_mm, convert_angle_to_deg
 from typing import Any
 
 
@@ -60,6 +60,7 @@ def json_to_command(item: dict) -> dict:
             rpm = item.get("rpm")
             depth = item.get("depth")
             tool = item.get("tool")
+            diameter = item.get("diameter")
 
             if rpm is not None:
                 rpm = int(rpm)
@@ -86,7 +87,8 @@ def json_to_command(item: dict) -> dict:
                     material=material,
                     rpm=rpm,
                     depth=depth,
-                    tool=tool
+                    tool=tool,
+                    diameter=diameter
                 )   
             }
         

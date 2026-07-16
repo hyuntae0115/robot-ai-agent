@@ -10,6 +10,7 @@ class MachiningSettings:
         self.rpm = 0
         self.depth = 0
         self.tool = None
+        self.tool_diameter = None
 
     def get_status(self):
         position = self.target_position
@@ -24,5 +25,6 @@ class MachiningSettings:
             f"  Material : {self.material}\n"
             f"  RPM      : {self.rpm}\n"
             f"  Depth    : {self.depth} mm\n"
-            f"  Tool     : {self.tool}"
+            f"  Tool     : {self.tool}\n"
+            f"  Diameter : {self.tool_diameter} mm"
         )
