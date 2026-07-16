@@ -37,7 +37,7 @@ Use this command to set machining conditions.
 
 {{
   "command": "machine",
-  "material": "aluminum | steel | plastic | copper | null",
+  "material": "aluminum | steel | carbon_steel | stainless_steel | titanium | iron | MD_CFRP | UD_CFRP | null",
   "rpm": integer | null,
   "depth": number | null,
   "tool": "endmill | drill | ballmill | null"
