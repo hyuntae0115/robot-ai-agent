@@ -1,12 +1,12 @@
 def handle(command, robot_state):
-    pose = command.args.get("pose")
+    position = command.args.get("position")
     material = command.args.get("material")
     rpm = command.args.get("rpm")
     depth = command.args.get("depth")
     tool = command.args.get("tool")
 
-    if pose is not None:
-        robot_state.target_pose = pose
+    if position is not None:
+        robot_state.target_position = position
 
     if material is not None:
         robot_state.material = material
@@ -22,7 +22,7 @@ def handle(command, robot_state):
 
     return (
         f"Machine setting updated\n"
-        f"Pose: {robot_state.target_pose}\n"
+        f"position: {robot_state.target_position}\n"
         f"Material: {robot_state.material}\n"
         f"RPM: {robot_state.rpm}\n"
         f"Depth: {robot_state.depth} mm\n"

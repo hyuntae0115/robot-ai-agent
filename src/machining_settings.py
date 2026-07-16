@@ -1,12 +1,9 @@
 class MachiningSettings:
     def __init__(self):
-        self.target_pose = {
+        self.target_position = {
             "x": None,
             "y": None,
             "z": None,
-            "roll": None,
-            "pitch": None,
-            "yaw": None
         }
 
         self.material = None
@@ -15,16 +12,13 @@ class MachiningSettings:
         self.tool = None
 
     def get_status(self):
-        pose = self.target_pose
+        position = self.target_position
 
         return (
-            f"Target Pose\n"
-            f"  x      : {pose['x']} mm\n"
-            f"  y      : {pose['y']} mm\n"
-            f"  z      : {pose['z']} mm\n"
-            f"  roll   : {pose['roll']}°\n"
-            f"  pitch  : {pose['pitch']}°\n"
-            f"  yaw    : {pose['yaw']}°\n\n"
+            f"Target position\n"
+            f"  x      : {position['x']} mm\n"
+            f"  y      : {position['y']} mm\n"
+            f"  z      : {position['z']} mm\n"
 
             f"Machining\n"
             f"  Material : {self.material}\n"

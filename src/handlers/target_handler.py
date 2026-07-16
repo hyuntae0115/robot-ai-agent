@@ -2,17 +2,13 @@ from units import normalize_angle
 
 
 def handle(command, robot_state):
-    pose = command.args.get("pose")
+    position = command.args.get("position")
 
-    if pose is None:
-        return "Target pose is missing"
+    if position is None:
+        return "Target position is missing"
 
     for key in ("x", "y", "z"):
-        if key in pose and pose[key] is not None:
-            robot_state.target_pose[key] = pose[key]
+        if key in position and position[key] is not None:
+            robot_state.target_position[key] = position[key]
 
-    for key in ("roll", "pitch", "yaw"):
-        if key in pose and pose[key] is not None:
-            robot_state.target_pose[key] = normalize_angle(pose[key])
-
-    return f"Target pose updated: {robot_state.target_pose}"
+    return f"Target position updated: {robot_state.target_position}"

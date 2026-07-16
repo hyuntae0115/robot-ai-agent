@@ -6,17 +6,14 @@ Available commands:
 
 1. Target
 
-Use this command to set the target TCP pose.
+Use this command to set the target TCP position.
 
 {{
   "command": "target",
-  "pose": {{
+  "position": {{
     "x": number | null,
     "y": number | null,
     "z": number | null,
-    "roll": number | null,
-    "pitch": number | null,
-    "yaw": number | null
   }},
   "distance_unit": "mm | cm | m",
   "angle_unit": "deg | rad"
@@ -51,24 +48,18 @@ User:
 
 Target command rules:
 
-- Use "target" when the user specifies a target position or target pose.
-- The pose represents the target TCP pose of the 6-axis robot.
+- Use "target" when the user specifies a target position or target position.
+- The position represents the target TCP position of the 6-axis robot.
 - x, y, and z represent the target TCP position.
-- roll, pitch, and yaw represent the target TCP orientation.
 - Preserve the distance unit used by the user in "distance_unit".
-- Preserve the angle unit used by the user in "angle_unit".
 - Allowed distance units are only: mm, cm, m.
-- Allowed angle units are only: deg, rad.
 - If the user does not specify a distance unit, use "mm".
-- If the user does not specify an angle unit, use "deg".
-- If only some pose values are provided, set all missing pose values to null.
-- If the user requests only orientation (roll, pitch, or yaw), return a "target" command with only the orientation values.
-- Set all unspecified pose values to null.
+- If only some position values are provided, set all missing position values to null.
+- Set all unspecified position values to null.
 - Never generate a "rotate" command. Use the "target" command for all position and orientation requests.
-- Do not invent missing pose values.
-- Do not convert target pose values. Preserve the values and units stated by the user.
+- Do not invent missing position values.
+- Do not convert target position values. Preserve the values and units stated by the user.
 - Assume x, y, and z use the same distance unit within one target command.
-- Assume roll, pitch, and yaw use the same angle unit within one target command.
 
 Machine command rules:
 
@@ -83,14 +74,14 @@ Machine command rules:
 - depth must always be returned in millimeters.
 - If the user gives depth in cm, multiply it by 10.
 - If the user gives depth in m, multiply it by 1000.
-- Target pose information must be returned as a separate "target" command, not inside the "machine" command.
+- Target position information must be returned as a separate "target" command, not inside the "machine" command.
 - Preserve the sign of every numeric value.
 - If the user provides a negative value, return the same negative value in JSON.
 - Never change a negative value into a positive value.
 
 Multiple command rules:
 
-- If the user specifies both a target pose and machining conditions, return both a "target" command and a "machine" command.
+- If the user specifies both a target position and machining conditions, return both a "target" command and a "machine" command.
 - Return commands in the order in which they should be executed.
 - The "target" command should normally come before the "machine" command.
 
@@ -102,13 +93,10 @@ User:
 [
   {{
     "command": "target",
-    "pose": {{
+    "position": {{
       "x": 100,
       "y": 200,
       "z": 30,
-      "roll": null,
-      "pitch": null,
-      "yaw": null
     }},
     "distance_unit": "mm",
     "angle_unit": "deg"
@@ -121,13 +109,10 @@ User:
 [
   {{
     "command": "target",
-    "pose": {{
+    "position": {{
       "x": 10,
       "y": 20,
       "z": 3,
-      "roll": null,
-      "pitch": null,
-      "yaw": null
     }},
     "distance_unit": "cm",
     "angle_unit": "deg"
@@ -135,18 +120,15 @@ User:
 ]
 
 User:
-x=100mm, y=200mm, z=30mm 위치에 roll=0도, pitch=15도, yaw=90도 자세로 설정해.
+x=100mm, y=200mm, z=30mm 위치로 설정해.
 
 [
   {{
     "command": "target",
-    "pose": {{
+    "position": {{
       "x": 100,
       "y": 200,
       "z": 30,
-      "roll": 0,
-      "pitch": 15,
-      "yaw": 90
     }},
     "distance_unit": "mm",
     "angle_unit": "deg"
@@ -167,18 +149,15 @@ User:
 ]
 
 User:
-x=10cm, y=20cm, z=3cm 위치에서 roll=0도, pitch=15도, yaw=90도 자세로 알루미늄을 3000rpm, 5mm 깊이, 엔드밀로 가공해.
+x=10cm, y=20cm, z=3cm 위치에서 알루미늄을 3000rpm, 5mm 깊이, 엔드밀로 가공해.
 
 [
   {{
     "command": "target",
-    "pose": {{
+    "position": {{
       "x": 10,
       "y": 20,
       "z": 3,
-      "roll": 0,
-      "pitch": 15,
-      "yaw": 90
     }},
     "distance_unit": "cm",
     "angle_unit": "deg"

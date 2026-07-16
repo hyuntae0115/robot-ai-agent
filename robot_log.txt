@@ -1,52 +1,66 @@
 [2026-07-13 16:14:55] input=x는 10센티 y는 30미리 z는 5미리에서 드릴을을 사용해서 3000의 속도로 깊이 5센티의 구멍을 뚫어줘 | result=Machine setting updated
-Pose: {'x': 10, 'y': 3, 'z': 0.5, 'roll': None, 'pitch': None, 'yaw': None}
+position: {'x': 10, 'y': 3, 'z': 0.5, 'roll': None, 'pitch': None, 'yaw': None}
 Material: None
 RPM: 3000
 Depth: 50.0 mm
 Tool: drill
-[2026-07-13 17:10:56] input=x는 10센티 y는 3센티 z는 4센티 에서 드릴로 5센티 깊이의 구멍을 하나 뚫어줘 | result=Target pose updated: {'x': 100, 'y': 30, 'z': 40, 'roll': None, 'pitch': None, 'yaw': None}
+[2026-07-13 17:10:56] input=x는 10센티 y는 3센티 z는 4센티 에서 드릴로 5센티 깊이의 구멍을 하나 뚫어줘 | result=Target position updated: {'x': 100, 'y': 30, 'z': 40, 'roll': None, 'pitch': None, 'yaw': None}
 [2026-07-13 17:10:56] input=x는 10센티 y는 3센티 z는 4센티 에서 드릴로 5센티 깊이의 구멍을 하나 뚫어줘 | result=Machine setting updated
-Pose: {'x': 100, 'y': 30, 'z': 40, 'roll': None, 'pitch': None, 'yaw': None}
+position: {'x': 100, 'y': 30, 'z': 40, 'roll': None, 'pitch': None, 'yaw': None}
 Material: None
 RPM: 0
 Depth: 50.0 mm
 Tool: drill
-[2026-07-13 17:12:31] input=x는 4미리 y는 5미리 z는 6미리 에서 드릴로 6센티 깊이의 구멍을 하나 뚫어줘 | result=Target pose updated: {'x': 4, 'y': 5, 'z': 6, 'roll': None, 'pitch': None, 'yaw': None}
+[2026-07-13 17:12:31] input=x는 4미리 y는 5미리 z는 6미리 에서 드릴로 6센티 깊이의 구멍을 하나 뚫어줘 | result=Target position updated: {'x': 4, 'y': 5, 'z': 6, 'roll': None, 'pitch': None, 'yaw': None}
 [2026-07-13 17:12:31] input=x는 4미리 y는 5미리 z는 6미리 에서 드릴로 6센티 깊이의 구멍을 하나 뚫어줘 | result=Machine setting updated
-Pose: {'x': 4, 'y': 5, 'z': 6, 'roll': None, 'pitch': None, 'yaw': None}
+position: {'x': 4, 'y': 5, 'z': 6, 'roll': None, 'pitch': None, 'yaw': None}
 Material: None
 RPM: 0
 Depth: 60.0 mm
 Tool: drill
-[2026-07-13 17:20:10] input=목표 위치를 x=100mm y=200mm z=300mm로 설정해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': None, 'pitch': None, 'yaw': None}
-[2026-07-13 17:20:42] input=목표 위치를 x=10cm y=20cm z=30cm로 설정해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': None, 'pitch': None, 'yaw': None}
-[2026-07-13 17:21:13] input=목표 위치를 x=0.1m y=0.2m z=0.3m로 설정해 | result=Target pose updated: {'x': 100.0, 'y': 200.0, 'z': 300.0, 'roll': None, 'pitch': None, 'yaw': None}
-[2026-07-13 17:21:33] input=목표 위치를 x=100mm y=200mm z=300mm에서 roll 30도 pitch 10도 yaw 90도로 설정해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 10, 'yaw': 90}
-[2026-07-13 17:22:06] input=x=100mm 위치로 설정해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 10, 'yaw': 90}
-[2026-07-13 17:22:36] input=x를200mm로 설정해 | result=Target pose updated: {'x': 200, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 10, 'yaw': 90}
-[2026-07-13 17:23:15] input=x는 4미터 y는 5미터 z는 6미터 위치에서 드릴을 사용해서 깊이 6센티 구멍 하나 뚫어줘 | result=Target pose updated: {'x': 4000, 'y': 5000, 'z': 6000, 'roll': 30, 'pitch': 10, 'yaw': 90}
+[2026-07-13 17:20:10] input=목표 위치를 x=100mm y=200mm z=300mm로 설정해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': None, 'pitch': None, 'yaw': None}
+[2026-07-13 17:20:42] input=목표 위치를 x=10cm y=20cm z=30cm로 설정해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': None, 'pitch': None, 'yaw': None}
+[2026-07-13 17:21:13] input=목표 위치를 x=0.1m y=0.2m z=0.3m로 설정해 | result=Target position updated: {'x': 100.0, 'y': 200.0, 'z': 300.0, 'roll': None, 'pitch': None, 'yaw': None}
+[2026-07-13 17:21:33] input=목표 위치를 x=100mm y=200mm z=300mm에서 roll 30도 pitch 10도 yaw 90도로 설정해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 10, 'yaw': 90}
+[2026-07-13 17:22:06] input=x=100mm 위치로 설정해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 10, 'yaw': 90}
+[2026-07-13 17:22:36] input=x를200mm로 설정해 | result=Target position updated: {'x': 200, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 10, 'yaw': 90}
+[2026-07-13 17:23:15] input=x는 4미터 y는 5미터 z는 6미터 위치에서 드릴을 사용해서 깊이 6센티 구멍 하나 뚫어줘 | result=Target position updated: {'x': 4000, 'y': 5000, 'z': 6000, 'roll': 30, 'pitch': 10, 'yaw': 90}
 [2026-07-13 17:23:15] input=x는 4미터 y는 5미터 z는 6미터 위치에서 드릴을 사용해서 깊이 6센티 구멍 하나 뚫어줘 | result=Machine setting updated
-Pose: {'x': 4000, 'y': 5000, 'z': 6000, 'roll': 30, 'pitch': 10, 'yaw': 90}
+position: {'x': 4000, 'y': 5000, 'z': 6000, 'roll': 30, 'pitch': 10, 'yaw': 90}
 Material: None
 RPM: 0
 Depth: 60.0 mm
 Tool: drill
 [2026-07-13 17:23:48] input=깊이 -5mm로 가공해 | result=Machine setting updated
-Pose: {'x': 4000, 'y': 5000, 'z': 6000, 'roll': 30, 'pitch': 10, 'yaw': 90}
+position: {'x': 4000, 'y': 5000, 'z': 6000, 'roll': 30, 'pitch': 10, 'yaw': 90}
 Material: None
 RPM: 0
 Depth: 5.0 mm
 Tool: drill
-[2026-07-13 17:33:46] input=목표 위치를 x=-100mm y=200mm z=300mm에서 roll 30도 pitch 10도 yaw 90도로 설정해 | result=Target pose updated: {'x': -100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 10, 'yaw': 90}
-[2026-07-13 17:33:58] input=목표 위치를 x=100mm y=200mm z=300mm에서 roll -30도 pitch 10도 yaw 90도로 설정해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': -30, 'pitch': 10, 'yaw': 90}
-[2026-07-13 17:41:24] input=목표 위치를 x=-100mm y=200mm z=300mm에서 roll 30도 pitch -10도 yaw 90도로 설정해 | result=Target pose updated: {'x': -100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
-[2026-07-13 17:41:57] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 -5mm 가공해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
-[2026-07-13 17:43:05] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 5mm 가공해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
+[2026-07-13 17:33:46] input=목표 위치를 x=-100mm y=200mm z=300mm에서 roll 30도 pitch 10도 yaw 90도로 설정해 | result=Target position updated: {'x': -100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 10, 'yaw': 90}
+[2026-07-13 17:33:58] input=목표 위치를 x=100mm y=200mm z=300mm에서 roll -30도 pitch 10도 yaw 90도로 설정해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': -30, 'pitch': 10, 'yaw': 90}
+[2026-07-13 17:41:24] input=목표 위치를 x=-100mm y=200mm z=300mm에서 roll 30도 pitch -10도 yaw 90도로 설정해 | result=Target position updated: {'x': -100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
+[2026-07-13 17:41:57] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 -5mm 가공해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
+[2026-07-13 17:43:05] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 5mm 가공해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
 [2026-07-13 17:43:05] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 5mm 가공해 | result=Machine setting updated
-Pose: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
+position: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
 Material: None
 RPM: 3000
 Depth: 5.0 mm
 Tool: drill
-[2026-07-13 17:43:15] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 -5mm 가공해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
-[2026-07-13 17:43:31] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 -5mm 가공해 | result=Target pose updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
+[2026-07-13 17:43:15] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 -5mm 가공해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
+[2026-07-13 17:43:31] input=x=100mm y=200mm z=300mm 위치에서 드릴을 사용하여 3000rpm으로 깊이 -5mm 가공해 | result=Target position updated: {'x': 100, 'y': 200, 'z': 300, 'roll': 30, 'pitch': 350, 'yaw': 90}
+[2026-07-16 15:19:57] input=23,34,56 에서 깊이 3미리 드릴 가공 해줘 알루미늄에 | result=Target position updated: {'x': 23, 'y': 34, 'z': 56}
+[2026-07-16 15:19:57] input=23,34,56 에서 깊이 3미리 드릴 가공 해줘 알루미늄에 | result=Machine setting updated
+position: {'x': 23, 'y': 34, 'z': 56}
+Material: aluminum
+RPM: 0
+Depth: 3.0 mm
+Tool: drill
+[2026-07-16 15:20:52] input=23,34,56 에서 깊이 5센티 드릴 가공 해줘 알루미늄에 | result=Target position updated: {'x': 230, 'y': 340, 'z': 560}
+[2026-07-16 15:20:52] input=23,34,56 에서 깊이 5센티 드릴 가공 해줘 알루미늄에 | result=Machine setting updated
+position: {'x': 230, 'y': 340, 'z': 560}
+Material: aluminum
+RPM: 0
+Depth: 50.0 mm
+Tool: drill

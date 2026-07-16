@@ -37,25 +37,21 @@ def json_to_command(item: dict) -> dict:
 
     try:
         if command_name == "target":
-            pose = item["pose"]
+            position = item["position"]
 
             distance_unit = item["distance_unit"]
-            angle_unit = item["angle_unit"]
 
-            converted_pose = {
-                "x": convert_distance_to_mm(pose["x"], distance_unit),
-                "y": convert_distance_to_mm(pose["y"], distance_unit),
-                "z": convert_distance_to_mm(pose["z"], distance_unit),
-                "roll": convert_angle_to_deg(pose["roll"], angle_unit),
-                "pitch": convert_angle_to_deg(pose["pitch"], angle_unit),
-                "yaw": convert_angle_to_deg(pose["yaw"], angle_unit),
+            converted_position = {
+                "x": convert_distance_to_mm(position["x"], distance_unit),
+                "y": convert_distance_to_mm(position["y"], distance_unit),
+                "z": convert_distance_to_mm(position["z"], distance_unit),
             }
 
             return {
                 "valid": True,
                 "command": Command(
                     "target",
-                    pose=converted_pose
+                    position=converted_position
                 )
             }
 
