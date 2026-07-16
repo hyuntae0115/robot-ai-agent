@@ -79,6 +79,53 @@ Machine command rules:
 - If the user provides a negative value, return the same negative value in JSON.
 - Never change a negative value into a positive value.
 
+Material normalization rules:
+
+* Normalize the material into one of:
+  "aluminum", "steel", "carbon_steel", "stainless_steel",
+  "titanium", "iron", "MD_CFRP", "UD_CFRP".
+* Recognize Korean names, English names, abbreviations, common misspellings, and speech-recognition variations.
+* Ignore capitalization, spaces, hyphens, and underscores when comparing material names.
+* Words such as "plate", "block", "sheet", "판", "봉", and "블록" describe the material shape and do not change the material type.
+* Use the most specific material category when multiple names match.
+* If the material is missing or cannot be identified confidently, return null.
+
+Material mappings:
+
+* Expressions containing "알루미늄", "알미늄", "aluminum", "aluminium", or clearly identified aluminum grades such as "A6061" and "A7075"
+  -> "aluminum"
+
+* "스텐", "스테인리스", "스테인레스", "SUS", "STS", "stainless steel", and stainless grades such as "SUS304" and "SUS316"
+  -> "stainless_steel"
+
+* "탄소강", "카본 스틸", "연강", "mild steel", "carbon steel", and carbon-steel grades such as "SS400" and "S45C"
+  -> "carbon_steel"
+
+* "강철", "강재", "일반강", "스틸", "steel", and generic machining expressions such as "철판"
+  -> "steel"
+
+* "티타늄", "타이타늄", "titanium", "Ti-6Al-4V", and "Ti64"
+  -> "titanium"
+
+* "순철", "순수 철", "pure iron", "elemental iron", and "Fe"
+  -> "iron"
+
+* "UD CFRP", "UD-CFRP", "유디 카본", "단방향 CFRP", "일방향 CFRP", and "unidirectional CFRP"
+  -> "UD_CFRP"
+
+* "MD CFRP", "MD-CFRP", "엠디 카본", "다방향 CFRP", "multidirectional CFRP", "woven CFRP", and "cross-ply CFRP"
+  -> "MD_CFRP"
+
+Conflict rules:
+
+* "stainless steel" must be classified as "stainless_steel", not "steel".
+* "carbon steel" must be classified as "carbon_steel", not "steel".
+* "carbon steel" must never be classified as CFRP.
+* Generic "철", "철판", and "쇠" should normally be classified as "steel".
+* Use "iron" only when pure or elemental iron is explicitly stated.
+* Do not classify generic "CFRP", "카본", or "탄소섬유 복합재" as MD or UD unless the fibre direction is specified.
+
+
 Multiple command rules:
 
 - If the user specifies both a target position and machining conditions, return both a "target" command and a "machine" command.
