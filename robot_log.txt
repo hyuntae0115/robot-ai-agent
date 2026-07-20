@@ -80,3 +80,235 @@ RPM: 0
 Depth: 0 mm
 Tool: drill
 diameter: 5 mm
+[2026-07-20 17:07:31] input=x=100mm, y=200mm, z=30mm로 이동해. | result=Target position updated: {'x': 100, 'y': 200, 'z': 30}
+[2026-07-20 17:21:35] input=목표 위치를 x 10cm, y 20cm로 설정해. | result=Target position updated: {'x': 100, 'y': 200, 'z': None}
+[2026-07-20 17:22:53] input=x=100mm, y=200mm, z=30mm로 이동해. | result=Target position updated: {'x': 100, 'y': 200, 'z': 30}
+[2026-07-20 17:23:01] input=목표 위치를 x 10cm, y 20cm로 설정해. | result=Target position updated: {'x': 100, 'y': 200, 'z': 30}
+[2026-07-20 17:24:19] input=z축 위치를 50으로 설정해. | result=Target position updated: {'x': 100, 'y': 200, 'z': 50}
+[2026-07-20 17:24:32] input=x=-100mm, y=50mm 위치로 이동해. | result=Target position updated: {'x': -100, 'y': 50, 'z': 50}
+[2026-07-20 17:29:22] input=목표 위치를 x 1m, y 2m, z 0.5m로 설정해. | result=Target position updated: {'x': 1000, 'y': 2000, 'z': 500.0}
+[2026-07-20 17:33:31] input=목표 위치를 x 1m, y 2m, z 0.5m로 설정해. | result=Target position updated: {'x': 1000, 'y': 2000, 'z': 500.0}
+[2026-07-20 17:33:41] input=알루미늄을 3000rpm으로 5mm 깊이 가공해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: aluminum
+RPM: 3000
+Depth: 5.0 mm
+Tool: None
+diameter: None mm
+[2026-07-20 17:34:01] input=스테인리스판을 엔드밀로 가공해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: stainless_steel
+RPM: 3000
+Depth: 5.0 mm
+Tool: endmill
+diameter: None mm
+[2026-07-20 17:37:24] input=탄소강을 2500rpm으로 가공해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: carbon_steel
+RPM: 2500
+Depth: 5.0 mm
+Tool: endmill
+diameter: None mm
+[2026-07-20 17:37:39] input=티타늄을 볼밀로 3mm 깊이 가공해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: titanium
+RPM: 2500
+Depth: 3.0 mm
+Tool: ballmill
+diameter: None mm
+[2026-07-20 17:37:52] input=철판을 2000rpm으로 가공해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: steel
+RPM: 2000
+Depth: 3.0 mm
+Tool: ballmill
+diameter: None mm
+[2026-07-20 17:38:59] input=알루미늄에 5mm 구멍을 뚫어. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: aluminum
+RPM: 2000
+Depth: 3.0 mm
+Tool: drill
+diameter: 5 mm
+[2026-07-20 17:39:26] input=스텐판에 6파이 구멍을 뚫어. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: stainless_steel
+RPM: 2000
+Depth: 3.0 mm
+Tool: drill
+diameter: 6 mm
+[2026-07-20 17:40:08] input=탄소강에 직경 8mm, 깊이 20mm로 구멍을 뚫어. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: carbon_steel
+RPM: 2000
+Depth: 20.0 mm
+Tool: drill
+diameter: 8 mm
+[2026-07-20 17:40:25] input=티타늄에 Ø4 구멍을 가공해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: titanium
+RPM: 2000
+Depth: 20.0 mm
+Tool: drill
+diameter: 4 mm
+[2026-07-20 17:40:54] input=철판에 10mm 드릴로 깊이 30mm까지 뚫어. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: steel
+RPM: 2000
+Depth: 30.0 mm
+Tool: drill
+diameter: 10 mm
+[2026-07-20 17:41:23] input=UD CFRP에 5mm 드릴 작업해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: UD_CFRP
+RPM: 2000
+Depth: 30.0 mm
+Tool: drill
+diameter: 5 mm
+[2026-07-20 17:41:37] input=MD CFRP에 직경 6mm로 홀을 만들어. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: MD_CFRP
+RPM: 2000
+Depth: 30.0 mm
+Tool: drill
+diameter: 6 mm
+[2026-07-20 17:41:47] input=알루미늄에 M6 탭을 내. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: aluminum
+RPM: 2000
+Depth: 30.0 mm
+Tool: tap
+diameter: 6 mm
+[2026-07-20 17:41:56] input=SUS304에 8mm 탭 가공해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: stainless_steel
+RPM: 2000
+Depth: 30.0 mm
+Tool: tap
+diameter: 8 mm
+[2026-07-20 17:42:14] input=탄소강에 직경 10mm로 나사산을 만들어. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: carbon_steel
+RPM: 2000
+Depth: 30.0 mm
+Tool: tap
+diameter: 10 mm
+[2026-07-20 17:42:26] input=철판에 깊이 15mm로 탭 작업해. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: steel
+RPM: 2000
+Depth: 15.0 mm
+Tool: tap
+diameter: 10 mm
+[2026-07-20 17:42:43] input=알루미늄 표면을 엔드밀로 2mm 깎아. | result=Machine setting updated
+position: {'x': 1000, 'y': 2000, 'z': 500.0}
+Material: aluminum
+RPM: 2000
+Depth: 2.0 mm
+Tool: endmill
+diameter: 10 mm
+[2026-07-20 18:16:34] input=MD CFRP에 직경 6mm로 홀을 만들어. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: MD_CFRP
+RPM: 0
+Depth: 0 mm
+Tool: drill
+Diameter: 6 mm
+[2026-07-20 18:26:03] input=알루미늄에 M6 탭을 내. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: aluminum
+RPM: 0
+Depth: 0 mm
+Tool: tap
+Diameter: 6 mm
+[2026-07-20 18:26:19] input=SUS304에 8mm 탭 가공해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: stainless_steel
+RPM: 0
+Depth: 0 mm
+Tool: tap
+Diameter: 8 mm
+[2026-07-20 18:26:31] input=탄소강에 직경 10mm로 나사산을 만들어. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: carbon_steel
+RPM: 0
+Depth: 0 mm
+Tool: tap
+Diameter: 10 mm
+[2026-07-20 18:26:38] input=철판에 깊이 15mm로 탭 작업해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: steel
+RPM: 0
+Depth: 15.0 mm
+Tool: tap
+Diameter: 10 mm
+[2026-07-20 18:26:46] input=알루미늄 표면을 엔드밀로 2mm 깎아. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: aluminum
+RPM: 0
+Depth: 2.0 mm
+Tool: endmill
+Diameter: None mm
+[2026-07-20 18:27:16] input=스텐판을 볼밀로 3mm 깊이 가공해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: stainless_steel
+RPM: 0
+Depth: 3.0 mm
+Tool: ballmill
+Diameter: None mm
+[2026-07-20 18:28:51] input=티타늄 표면을 밀링해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: titanium
+RPM: 0
+Depth: 3.0 mm
+Tool: ballmill
+Diameter: None mm
+[2026-07-20 18:50:55] input=탄소강을 4000rpm 엔드밀로 절삭해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: carbon_steel
+RPM: 4000
+Depth: 3.0 mm
+Tool: endmill
+Diameter: None mm
+[2026-07-20 18:58:01] input=스텐판을 볼밀로 3mm 깊이 가공해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: stainless_steel
+RPM: 0
+Depth: 3.0 mm
+Tool: ballmill
+Diameter: None mm
+[2026-07-20 18:58:12] input=티타늄 표면을 밀링해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: titanium
+RPM: 0
+Depth: 3.0 mm
+Tool: ballmill
+Diameter: None mm
+[2026-07-20 18:58:19] input=탄소강을 4000rpm 엔드밀로 절삭해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: carbon_steel
+RPM: 4000
+Depth: None mm
+Tool: endmill
+Diameter: None mm
+[2026-07-20 18:59:25] input=깊이는 3mm로 | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: carbon_steel
+RPM: 4000
+Depth: 3.0 mm
+Tool: endmill
+Diameter: None mm
+[2026-07-20 18:59:41] input=MD CFRP 표면을 볼 엔드밀로 가공해. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: MD_CFRP
+RPM: 4000
+Depth: None mm
+Tool: ballmill
+Diameter: None mm
+[2026-07-20 19:03:06] input=알미늄판에 5파이 구멍을 뚫어. | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: aluminum
+RPM: 4000
+Depth: None mm
+Tool: drill
+Diameter: 5 mm

@@ -145,7 +145,7 @@ def run_gui(robot_state):
     state_label = tk.Label(root, text="Robot State")
     state_label.pack()
 
-    state_text = tk.Text(root, height=8, width=80)
+    state_text = tk.Text(root, height=80, width=80)
     state_text.pack(pady=5)
 
     show_state()

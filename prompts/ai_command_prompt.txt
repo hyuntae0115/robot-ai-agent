@@ -36,12 +36,12 @@ Use this command to set machining conditions.
 
 {
 "command": "machine",
-"process": "milling | drilling | tapping | null",
 "material": "aluminum | steel | carbon_steel | stainless_steel | titanium | iron | MD_CFRP | UD_CFRP | null",
-"rpm": integer | null,
-"depth": number | null,
+"process": "milling | drilling | tapping | null",
 "tool": "endmill | drill | ballmill | tap | null",
-"diameter": number | null
+"diameter": number | null,
+"depth": number | null,
+"rpm": integer | null
 }
 
 User:
@@ -76,25 +76,6 @@ Machine command rules:
 * Preserve the sign of every numeric value.
 * Never change a negative value into a positive value.
 * Target position information must not be included inside the machine command.
-
-Process interpretation rules:
-
-* Infer the machining process only when it is clearly stated or unambiguously implied.
-* Requests to make, drill, or bore a hole indicate "drilling".
-* Requests to mill, cut, machine, or remove material from a surface using an endmill or ballmill indicate "milling".
-* Requests to create an internal thread or perform tapping indicate "tapping".
-* If the process is unclear, return null.
-* Do not infer a process only from the material name, rpm, depth, or position.
-
-Tool interpretation rules:
-
-* Normalize "엔드밀", "end mill", and "endmill" to "endmill".
-* Normalize "드릴", "드릴 비트", "drill", and "drill bit" to "drill".
-* Normalize "볼밀", "볼 엔드밀", "ball mill", and "ballmill" to "ballmill".
-* Normalize "탭", "탭 공구", and "tap" to "tap".
-* If the user requests drilling but does not explicitly specify the tool, infer "drill".
-* If the user requests tapping but does not explicitly specify the tool, infer "tap".
-* Do not infer "endmill" or "ballmill" unless the tool or operation clearly indicates it.
 
 Material normalization rules:
 
@@ -141,6 +122,26 @@ Material conflict rules:
 * Generic "철", "철판", and "쇠" should normally be classified as "steel".
 * Use "iron" only when pure or elemental iron is explicitly stated.
 * Do not classify generic "CFRP", "카본", or "탄소섬유 복합재" as MD or UD unless the fiber direction is specified.
+
+
+Process interpretation rules:
+
+* Infer the machining process only when it is clearly stated or unambiguously implied.
+* Requests to make, drill, or bore a hole indicate "drilling".
+* Requests to mill, cut, machine, or remove material from a surface using an endmill or ballmill indicate "milling".
+* Requests to create an internal thread or perform tapping indicate "tapping".
+* If the process is unclear, return null.
+* Do not infer a process only from the material name, rpm, depth, or position.
+
+Tool interpretation rules:
+
+* Normalize "엔드밀", "end mill", and "endmill" to "endmill".
+* Normalize "드릴", "드릴 비트", "drill", and "drill bit" to "drill".
+* Normalize "볼밀", "볼 엔드밀", "ball mill", and "ballmill" to "ballmill".
+* Normalize "탭", "탭 공구", and "tap" to "tap".
+* If the user requests drilling but does not explicitly specify the tool, infer "drill".
+* If the user requests tapping but does not explicitly specify the tool, infer "tap".
+* Do not infer "endmill" or "ballmill" unless the tool or operation clearly indicates it.
 
 Diameter interpretation rules:
 

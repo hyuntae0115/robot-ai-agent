@@ -1,8 +1,12 @@
 import math
 
 
-def convert_distance_to_mm(value, unit):
-    unit = unit.lower()
+def convert_distance_to_mm(
+    value: int | float | None,
+    unit: str
+) -> int | float | None:
+    if value is None:
+        return None
 
     if unit == "mm":
         return value
