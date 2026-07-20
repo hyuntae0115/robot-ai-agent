@@ -64,3 +64,19 @@ Material: aluminum
 RPM: 0
 Depth: 50.0 mm
 Tool: drill
+[2026-07-20 15:08:51] input=5,4,6에서 5미리 구멍 하나 뚫어줘 | result=Target position updated: {'x': 5, 'y': 4, 'z': 6}
+[2026-07-20 15:08:51] input=5,4,6에서 5미리 구멍 하나 뚫어줘 | result=Machine setting updated
+position: {'x': 5, 'y': 4, 'z': 6}
+Material: None
+RPM: 0
+Depth: 0 mm
+Tool: drill
+diameter: 5 mm
+[2026-07-20 15:10:33] input=7,8,9에서 5파이 짜리 6미리 구멍 하나 뚫어줘 | result=Target position updated: {'x': 7, 'y': 8, 'z': 9}
+[2026-07-20 15:10:33] input=7,8,9에서 5파이 짜리 6미리 구멍 하나 뚫어줘 | result=Machine setting updated
+position: {'x': 7, 'y': 8, 'z': 9}
+Material: None
+RPM: 0
+Depth: 0 mm
+Tool: drill
+diameter: 5 mm

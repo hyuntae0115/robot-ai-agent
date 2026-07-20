@@ -127,7 +127,7 @@ def process(user_input: str):
     with open(PROMPT_PATH, "r", encoding="utf-8") as file:
         prompt = file.read()
 
-    prompt = prompt.format(user_input=user_input)
+    prompt = prompt.replace("{user_input}", user_input)
 
     response = client.responses.create(
         model="gpt-4.1-mini",
