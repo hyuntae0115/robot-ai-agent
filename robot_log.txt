@@ -312,3 +312,26 @@ RPM: 4000
 Depth: None mm
 Tool: drill
 Diameter: 5 mm
+[2026-07-20 23:54:09] input=앞으로 Grandpa | result=Target position updated: {'x': None, 'y': None, 'z': None}
+[2026-07-20 23:54:35] input=X여는 ell y'n이 2 CHANNESA | result=Target position updated: {'x': None, 'y': 2, 'z': None}
+[2026-07-20 23:55:51] input=x는 3, y는 3 | result=Target position updated: {'x': 3, 'y': 3, 'z': None}
+[2026-07-21 00:06:11] input=ขother mile von my possono | result=Robot stopped
+[2026-07-21 00:06:51] input=한마이, 한마이, 일해서 3초 | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: None
+Process: None
+Tool: None
+Diameter: None mm
+Depth: 0 mm
+RPM: 0 RPM
+[2026-07-21 00:11:30] input=주변 소음이 아니고 잠깐만 x는 1 y는 이 z는 3에서 3000 rpm으로 알루미늄 가공해줘 | result=Target position updated: {'x': 1, 'y': None, 'z': 3}
+[2026-07-21 00:11:30] input=주변 소음이 아니고 잠깐만 x는 1 y는 이 z는 3에서 3000 rpm으로 알루미늄 가공해줘 | result=Machine setting updated
+Position: {'x': 1, 'y': None, 'z': 3}
+Material: aluminum
+Process: None
+Tool: None
+Diameter: None mm
+Depth: 0 mm
+RPM: 3000 RPM
+[2026-07-21 00:31:13] input=5cm 깊이, 5cm 깊이, 6cm, 5cm 깊이, 5cm 깊이, | result=Target position updated: {'x': 50, 'y': 50, 'z': 60}
+[2026-07-21 00:31:13] input=5cm 깊이, 5cm 깊이, 6cm, 5cm 깊이, 5cm 깊이, | result=Target position updated: {'x': 50, 'y': 50, 'z': 50}

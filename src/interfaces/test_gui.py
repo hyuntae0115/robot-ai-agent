@@ -1,7 +1,7 @@
 import tkinter as tk
 
 from controller import handle_user_input
-from interfaces.voice import listen_voice
+from voice import listen_voice
 
 
 def run_gui(robot_state):
