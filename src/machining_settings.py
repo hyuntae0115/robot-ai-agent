@@ -10,7 +10,7 @@ class MachiningSettings:
         self.process = None
         self.tool = None
         self.diameter = None   
-        self.depth = 0  
+        self.depth = 0
         self.rpm = 0
         
         
