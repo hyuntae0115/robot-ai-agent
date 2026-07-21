@@ -414,3 +414,103 @@ Tool: drill
 Diameter: 6 mm
 Depth: 0 mm
 RPM: 0 RPM
+[2026-07-21 22:08:36] input=x는 3, y는 150, z는 50으로 이동한 후, 알루미늄의 직경 6mm 구멍 들어줘. | result=Target position updated: {'x': 3, 'y': 150, 'z': 50}
+[2026-07-21 22:08:36] input=x는 3, y는 150, z는 50으로 이동한 후, 알루미늄의 직경 6mm 구멍 들어줘. | result=Machine setting updated
+Position: {'x': 3, 'y': 150, 'z': 50}
+Material: aluminum
+Process: None
+Tool: drill
+Diameter: 6 mm
+Depth: 0 mm
+RPM: 0 RPM
+[2026-07-21 22:09:34] input=x는 350, z는 50% 이동한지, 알루미늄의 직경 6mm로 구멍 들어줘. | result=Target position updated: {'x': 350, 'y': 150, 'z': 0.5}
+[2026-07-21 22:09:34] input=x는 350, z는 50% 이동한지, 알루미늄의 직경 6mm로 구멍 들어줘. | result=Machine setting updated
+Position: {'x': 350, 'y': 150, 'z': 0.5}
+Material: aluminum
+Process: None
+Tool: drill
+Diameter: 6 mm
+Depth: 0 mm
+RPM: 0 RPM
+[2026-07-21 22:10:53] input=x는 350, z는 50으로 이동한 뒤, 활유미늄의 직경 6mm로 구멍을 들어줘. | result=Target position updated: {'x': 350, 'y': 150, 'z': 50}
+[2026-07-21 22:10:53] input=x는 350, z는 50으로 이동한 뒤, 활유미늄의 직경 6mm로 구멍을 들어줘. | result=Machine setting updated
+Position: {'x': 350, 'y': 150, 'z': 50}
+Material: aluminum
+Process: None
+Tool: drill
+Diameter: 6 mm
+Depth: 0 mm
+RPM: 0 RPM
+[2026-07-21 22:56:47] input=x는 390, z는 50으로 이동한 뒤 알루미늄의 직경. | result=Target position updated: {'x': 390, 'y': None, 'z': 50}
+[2026-07-21 22:56:47] input=x는 390, z는 50으로 이동한 뒤 알루미늄의 직경. | result=Machine setting updated
+Position: {'x': 390, 'y': None, 'z': 50}
+Material: aluminum
+Process: None
+Tool: None
+Diameter: None mm
+Depth: 0 mm
+RPM: 0 RPM
+[2026-07-21 22:57:15] input=x는 350, z는 50으로 이동한 뒤 알루미늄의 직경 6mm로 구멍을 뚫어줘. | result=Target position updated: {'x': 350, 'y': None, 'z': 50}
+[2026-07-21 22:57:15] input=x는 350, z는 50으로 이동한 뒤 알루미늄의 직경 6mm로 구멍을 뚫어줘. | result=Machine setting updated
+Position: {'x': 350, 'y': None, 'z': 50}
+Material: aluminum
+Process: None
+Tool: drill
+Diameter: 6 mm
+Depth: 0 mm
+RPM: 0 RPM
+[2026-07-21 22:57:37] input=x는 3, y는 150 | result=Target position updated: {'x': 3, 'y': 150, 'z': 50}
+[2026-07-21 22:58:25] input=x는 350, z는 50으로 이동한지, 루이미늄의 직경 6mm로 공항을 뚫어줘. | result=Target position updated: {'x': 350, 'y': 150, 'z': 50}
+[2026-07-21 22:58:25] input=x는 350, z는 50으로 이동한지, 루이미늄의 직경 6mm로 공항을 뚫어줘. | result=Machine setting updated
+Position: {'x': 350, 'y': 150, 'z': 50}
+Material: aluminum
+Process: None
+Tool: drill
+Diameter: 6 mm
+Depth: 0 mm
+RPM: 0 RPM
+[2026-07-21 23:05:04] input=x는 300, y는 150, z는 50으로 이동한 뒤, 알루미늄의 직경 6mm로 구멍을 뚫어줘. | result=Target position updated: {'x': 300, 'y': 150, 'z': 50}
+[2026-07-21 23:05:04] input=x는 300, y는 150, z는 50으로 이동한 뒤, 알루미늄의 직경 6mm로 구멍을 뚫어줘. | result=Machine setting updated
+Position: {'x': 300, 'y': 150, 'z': 50}
+Material: aluminum
+Process: None
+Tool: drill
+Diameter: 6 mm
+Depth: 0 mm
+RPM: 0 RPM
+[2026-07-21 23:06:48] input=x는 250, y는 100, z는 80으로 이동한 뒤, 관렴 인형을 1200 RPM으로 측정 8mm를 사용하여, 깊이 19mm로 드릴링해. | result=Target position updated: {'x': 250, 'y': 100, 'z': 80}
+[2026-07-21 23:06:48] input=x는 250, y는 100, z는 80으로 이동한 뒤, 관렴 인형을 1200 RPM으로 측정 8mm를 사용하여, 깊이 19mm로 드릴링해. | result=Machine setting updated
+Position: {'x': 250, 'y': 100, 'z': 80}
+Material: aluminum
+Process: None
+Tool: drill
+Diameter: 8 mm
+Depth: 19.0 mm
+RPM: 1200 RPM
+[2026-07-21 23:07:56] input=x는 250, y는 100, z는 80으로 이동한 뒤, 디턴으물 12000 RPM으로 직경 8mm 드릴을 사용하여, DPC 15mm로 드릴링해. | result=Target position updated: {'x': 250, 'y': 100, 'z': 80}
+[2026-07-21 23:07:56] input=x는 250, y는 100, z는 80으로 이동한 뒤, 디턴으물 12000 RPM으로 직경 8mm 드릴을 사용하여, DPC 15mm로 드릴링해. | result=Machine setting updated
+Position: {'x': 250, 'y': 100, 'z': 80}
+Material: aluminum
+Process: None
+Tool: drill
+Diameter: 8 mm
+Depth: 15.0 mm
+RPM: 12000 RPM
+[2026-07-21 23:09:13] input=x는 250, y는 100, z는 80으로 이동한 뒤, 히터늄을 12000 RPM으로 식경 8mm 드릴을 사용해요. 깊이 15mm로 드릴링해 | result=Target position updated: {'x': 250, 'y': 100, 'z': 80}
+[2026-07-21 23:09:13] input=x는 250, y는 100, z는 80으로 이동한 뒤, 히터늄을 12000 RPM으로 식경 8mm 드릴을 사용해요. 깊이 15mm로 드릴링해 | result=Machine setting updated
+Position: {'x': 250, 'y': 100, 'z': 80}
+Material: titanium
+Process: None
+Tool: drill
+Diameter: 8 mm
+Depth: 15.0 mm
+RPM: 12000 RPM
+[2026-07-21 23:10:33] input=x는 100, y는 200, z는 50으로 이동한 후, 도르미를 사용하여 타이타늉을 8000 RPM으로 비 3mm 가공을. | result=Target position updated: {'x': 100, 'y': 200, 'z': 50}
+[2026-07-21 23:10:33] input=x는 100, y는 200, z는 50으로 이동한 후, 도르미를 사용하여 타이타늉을 8000 RPM으로 비 3mm 가공을. | result=Machine setting updated
+Position: {'x': 100, 'y': 200, 'z': 50}
+Material: titanium
+Process: None
+Tool: drill
+Diameter: 3 mm
+Depth: 15.0 mm
+RPM: 8000 RPM
