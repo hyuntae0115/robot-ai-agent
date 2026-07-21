@@ -11,7 +11,7 @@ def run_gui(robot_state):
 
     root = tk.Tk()
     root.title("Robot AI Agent Test GUI")
-    root.geometry("700x500")
+    root.geometry("700x850")
 
     def show_llm_json(text):
         json_text.insert(
@@ -34,13 +34,25 @@ def run_gui(robot_state):
         )
         state_text.see(tk.END)
 
-    def update_voice_status(message: str):
-        """
-        음성 녹음 및 인식 상태를 GUI에 표시한다.
+    def show_voice_result(
+        raw_text: str,
+        normalized_text: str
+    ):
+        voice_result_text.config(state="normal")
+        voice_result_text.delete("1.0", tk.END)
 
-        음성 처리는 별도 스레드에서 실행되므로
-        Tkinter 위젯은 root.after()를 통해 변경한다.
-        """
+        voice_result_text.insert(
+            tk.END,
+            "Whisper 원본\n"
+            f"{raw_text}\n\n"
+            "보정된 음성 명령\n"
+            f"{normalized_text}"
+        )
+
+        voice_result_text.see("1.0")
+        voice_result_text.config(state="disabled")
+
+    def update_voice_status(message: str):
         root.after(
             0,
             lambda: voice_status_label.config(
@@ -52,11 +64,8 @@ def run_gui(robot_state):
         raw_text: str,
         normalized_text: str
     ):
-        """
-        음성 인식이 끝난 뒤 GUI를 갱신하고
-        보정된 문장을 실행한다.
-        """
         voice_button.config(state="normal")
+        run_button.config(state="normal")
 
         if not normalized_text:
             voice_status_label.config(
@@ -70,17 +79,15 @@ def run_gui(robot_state):
             command_entry.focus_set()
             return
 
+        show_voice_result(
+            raw_text,
+            normalized_text
+        )
+
         command_entry.delete(0, tk.END)
         command_entry.insert(
             0,
             normalized_text
-        )
-
-        show_result(
-            "음성 인식 원본\n"
-            f"{raw_text}\n\n"
-            "보정된 음성 명령\n"
-            f"{normalized_text}"
         )
 
         voice_status_label.config(
@@ -92,10 +99,8 @@ def run_gui(robot_state):
         run_text_command()
 
     def handle_voice_error(error: Exception):
-        """
-        음성 처리 중 오류가 발생한 경우 GUI에 표시한다.
-        """
         voice_button.config(state="normal")
+        run_button.config(state="normal")
 
         voice_status_label.config(
             text="음성 처리 중 오류가 발생했습니다."
@@ -109,14 +114,8 @@ def run_gui(robot_state):
         command_entry.focus_set()
 
     def run_voice_command():
-        """
-        음성 녹음과 Whisper 처리를 별도 스레드에서 실행한다.
-
-        별도 스레드를 사용하는 이유는
-        녹음 및 음성 인식 중 Tkinter GUI가 멈추는 것을
-        방지하기 위해서다.
-        """
         voice_button.config(state="disabled")
+        run_button.config(state="disabled")
 
         voice_status_label.config(
             text="음성 입력을 준비하고 있습니다."
@@ -273,6 +272,21 @@ def run_gui(robot_state):
     )
     voice_button.pack(pady=5)
 
+    voice_result_label = tk.Label(
+        root,
+        text="Voice Recognition Result"
+    )
+    voice_result_label.pack()
+
+    voice_result_text = tk.Text(
+        root,
+        height=5,
+        width=80,
+        wrap=tk.WORD
+    )
+    voice_result_text.pack(pady=5)
+    voice_result_text.config(state="disabled")
+
     json_label = tk.Label(
         root,
         text="LLM JSON"
@@ -281,8 +295,9 @@ def run_gui(robot_state):
 
     json_text = tk.Text(
         root,
-        height=8,
-        width=80
+        height=6,
+        width=80,
+        wrap=tk.WORD
     )
     json_text.pack(pady=5)
 
@@ -294,8 +309,9 @@ def run_gui(robot_state):
 
     result_text = tk.Text(
         root,
-        height=8,
-        width=80
+        height=6,
+        width=80,
+        wrap=tk.WORD
     )
     result_text.pack(pady=5)
 
@@ -307,8 +323,9 @@ def run_gui(robot_state):
 
     state_text = tk.Text(
         root,
-        height=80,
-        width=80
+        height=8,
+        width=80,
+        wrap=tk.WORD
     )
     state_text.pack(pady=5)
 
