@@ -27,7 +27,7 @@ def send_status(
 # Whisper 모델은 음성 인식마다 다시 생성하지 않고
 # recognizer.py가 처음 불러와질 때 한 번만 생성한다.
 print("Whisper 모델을 불러오는 중입니다.")
-model = whisper.load_model("small")
+model = whisper.load_model("medium")
 print("Whisper 모델 로딩이 완료되었습니다.")
 
 

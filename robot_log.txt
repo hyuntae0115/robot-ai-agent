@@ -514,3 +514,21 @@ Tool: drill
 Diameter: 3 mm
 Depth: 15.0 mm
 RPM: 8000 RPM
+[2026-07-22 11:18:55] input=x는 100, y는 200, z는 50으로 이동한 후 엔드밀을 사용하여 타이타늄으로 8000 RPM으로 깊이 3mm 가공해. | result=Target position updated: {'x': 100, 'y': 200, 'z': 50}
+[2026-07-22 11:18:55] input=x는 100, y는 200, z는 50으로 이동한 후 엔드밀을 사용하여 타이타늄으로 8000 RPM으로 깊이 3mm 가공해. | result=Machine setting updated
+Position: {'x': 100, 'y': 200, 'z': 50}
+Material: titanium
+Process: None
+Tool: endmill
+Diameter: None mm
+Depth: 3.0 mm
+RPM: 8000 RPM
+[2026-07-22 11:20:18] input=x는 250, y는 100, z는 80으로 이동한 뒤, 티타늄을 12000 RPM으로 직경 8mm 드릴을 사용하여 깊이 15mm로 드릴링해. | result=Target position updated: {'x': 250, 'y': 100, 'z': 80}
+[2026-07-22 11:20:18] input=x는 250, y는 100, z는 80으로 이동한 뒤, 티타늄을 12000 RPM으로 직경 8mm 드릴을 사용하여 깊이 15mm로 드릴링해. | result=Machine setting updated
+Position: {'x': 250, 'y': 100, 'z': 80}
+Material: titanium
+Process: None
+Tool: drill
+Diameter: 8 mm
+Depth: 15.0 mm
+RPM: 12000 RPM
