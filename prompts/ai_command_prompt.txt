@@ -126,12 +126,16 @@ Material conflict rules:
 
 Process interpretation rules:
 
-* Infer the machining process only when it is clearly stated or unambiguously implied.
+* Infer the machining process only when it is explicitly stated or unambiguously implied.
 * Requests to make, drill, or bore a hole indicate "drilling".
-* Requests to mill, cut, machine, or remove material from a surface using an endmill or ballmill indicate "milling".
+* Requests to mill, cut, face, pocket, slot, or remove material using an endmill or ballmill indicate "milling".
 * Requests to create an internal thread or perform tapping indicate "tapping".
-* If the process is unclear, return null.
+* If a drill is explicitly specified as the cutting tool, classify the process as "drilling".
+* If an endmill or ballmill is explicitly specified as the cutting tool, classify the process as "milling".
+* The generic request "machine" or "process" alone is not sufficient to infer the process.
 * Do not infer a process only from the material name, rpm, depth, or position.
+* If the specified tool conflicts with the requested process, prioritize the explicitly requested process.
+* If the process remains ambiguous, return null instead of guessing.
 
 Tool interpretation rules:
 
