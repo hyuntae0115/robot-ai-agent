@@ -532,3 +532,25 @@ Tool: drill
 Diameter: 8 mm
 Depth: 15.0 mm
 RPM: 12000 RPM
+[2026-07-24 17:14:19] input=2 | result=Target position
+  x      : None mm
+  y      : None mm
+  z      : None mm
+Machining
+  Material : None
+  Process   : None
+  Tool     : None
+  Diameter : None mm
+  Depth    : 0 mm
+  RPM      : 0 RPM
+[2026-07-24 17:24:48] input=3 | result=Robot stopped
+[2026-07-24 17:25:00] input=3 | result=Robot stopped
+[2026-07-24 17:54:52] input=GUI 작업 실행 | result=Target position is missing
+[2026-07-24 17:54:52] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': None, 'y': None, 'z': None}
+Material: None
+Process: None
+Tool: None
+Diameter: None mm
+Depth: 0 mm
+RPM: 0 RPM

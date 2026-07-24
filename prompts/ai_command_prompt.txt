@@ -126,27 +126,97 @@ Material conflict rules:
 
 Process interpretation rules:
 
-* Infer the machining process only when it is explicitly stated or unambiguously implied.
-* Requests to make, drill, or bore a hole indicate "drilling".
-* Requests to mill, cut, face, pocket, slot, or remove material using an endmill or ballmill indicate "milling".
-* Requests to create an internal thread or perform tapping indicate "tapping".
-* If a drill is explicitly specified as the cutting tool, classify the process as "drilling".
-* If an endmill or ballmill is explicitly specified as the cutting tool, classify the process as "milling".
-* The generic request "machine" or "process" alone is not sufficient to infer the process.
-* Do not infer a process only from the material name, rpm, depth, or position.
-* If the specified tool conflicts with the requested process, prioritize the explicitly requested process.
-* If the process remains ambiguous, return null instead of guessing.
+* "process" represents the machining operation.
+* "tool" represents the physical cutting tool.
+* Process and tool are separate fields.
+* A single expression may determine both "process" and "tool".
+* Never store an explicitly stated machining process only in "tool".
+
+Drilling process rules:
+
+* Expressions such as "드릴링", "드릴링해줘", "드릴링 가공",
+  "구멍을 뚫어줘", "구멍을 뚫어", "홀 가공", "천공",
+  "drilling", "drill a hole", "boring", and "bore a hole"
+  unambiguously indicate:
+  "process": "drilling".
+
+* The Korean word "드릴링" is a machining process name.
+  It must always set "process" to "drilling".
+* Never interpret "드릴링" only as the tool "drill".
+* When the process is drilling, infer:
+  "tool": "drill"
+  unless the user explicitly specifies another tool.
+* Therefore, "드릴링해줘" must produce both:
+  "process": "drilling"
+  "tool": "drill".
+
+Milling process rules:
+
+* Expressions such as "밀링", "밀링해줘", "밀링 가공",
+  "평면 가공", "페이스 가공", "포켓 가공", "슬롯 가공",
+  "milling", "face milling", "pocket milling", and "slot milling"
+  indicate:
+  "process": "milling".
+
+* Requests to remove material using an endmill or ballmill
+  normally indicate:
+  "process": "milling".
+
+Tapping process rules:
+
+* Expressions such as "탭 가공", "탭을 내줘", "나사산을 만들어줘",
+  "암나사를 가공해줘", "tapping", and "create an internal thread"
+  indicate:
+  "process": "tapping".
+
+* When the process is tapping, infer:
+  "tool": "tap"
+  unless the user explicitly specifies another tool.
+
+General process rules:
+
+* Infer the machining process when it is explicitly stated or
+  unambiguously implied by the requested operation or cutting tool.
+* If a drill is explicitly specified as the cutting tool,
+  infer "process": "drilling".
+* If an endmill or ballmill is explicitly specified as the cutting tool,
+  infer "process": "milling".
+* If a tap is explicitly specified as the cutting tool,
+  infer "process": "tapping".
+* The generic requests "가공해줘", "machine", and "process" alone
+  are not sufficient to infer the machining process.
+* Do not infer a process only from the material, rpm, depth,
+  diameter, or target position.
+* If the explicitly specified tool conflicts with the explicitly
+  requested process, preserve both values as stated by the user.
+* Do not replace an explicitly requested process based only on the tool.
+* If the process remains ambiguous, return null.
 
 Tool interpretation rules:
 
-* Normalize "엔드밀", "end mill", and "endmill" to "endmill".
-* Normalize "드릴", "드릴 비트", "drill", and "drill bit" to "drill".
-* Normalize "볼밀", "볼 엔드밀", "ball mill", and "ballmill" to "ballmill".
-* Normalize "탭", "탭 공구", and "tap" to "tap".
-* If the user requests drilling but does not explicitly specify the tool, infer "drill".
-* If the user requests tapping but does not explicitly specify the tool, infer "tap".
-* Do not infer "endmill" or "ballmill" unless the tool or operation clearly indicates it.
+* "tool" represents the physical cutting tool, not the machining process.
+* Normalize "엔드밀", "엔드 밀", "end mill", and "endmill"
+  to "endmill".
+* Normalize "드릴", "드릴 비트", "drill", and "drill bit"
+  to "drill".
+* Normalize "볼밀", "볼 밀", "볼 엔드밀", "ball mill",
+  "ball endmill", and "ballmill"
+  to "ballmill".
+* Normalize "탭", "탭 공구", "tap", and "tap tool"
+  to "tap".
 
+* If the requested process is "drilling", set "tool" to "drill"
+  unless another tool is explicitly specified.
+* If the requested process is "tapping", set "tool" to "tap"
+  unless another tool is explicitly specified.
+* Do not infer "endmill" or "ballmill" unless the tool or operation
+  clearly indicates it.
+* The expression "드릴링" determines the process first:
+  "process": "drilling".
+  It also allows "tool": "drill" to be inferred.
+* Never return only "tool": "drill" with "process": null
+  when the user explicitly requests drilling.
+  
 Diameter interpretation rules:
 
 * When the user specifies a hole size, drill size, tool size, or diameter, return the value in "diameter".
@@ -290,6 +360,21 @@ SUS304를 2500rpm으로 가공해.
 "rpm": 2500,
 "depth": null,
 "tool": null,
+"diameter": null
+}
+]
+
+User:
+구멍 뚫어줘.
+
+[
+{
+"command": "machine",
+"process": "drilling",
+"material": null,
+"rpm": null,
+"depth": null,
+"tool": "drill",
 "diameter": null
 }
 ]

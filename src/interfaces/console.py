@@ -1,7 +1,7 @@
 from controller import handle_user_input
 
 
-def run_console(robot_state):
+def run_console(robot_state, command_context):
     print("Robot AI Agent started.")
     print("Type 'exit' to quit.")
 
@@ -17,7 +17,8 @@ def run_console(robot_state):
 
         results, _ = handle_user_input(
             user_input,
-            robot_state
+            robot_state,
+            command_context
         )
 
         for result in results:
