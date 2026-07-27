@@ -12,7 +12,7 @@ CHUNK_SECONDS = 0.1
 CHUNK_SIZE = int(SAMPLE_RATE * CHUNK_SECONDS)
 
 CALIBRATION_SECONDS = 1.0
-SILENCE_DURATION = 1.5
+SILENCE_DURATION = 2.5
 START_TIMEOUT = 10.0
 MAX_RECORD_SECONDS = 20.0
 PRE_RECORD_SECONDS = 0.5
@@ -81,8 +81,8 @@ def measure_noise_level(
     noise_level = float(np.mean(noise_volumes))
 
     threshold = max(
-        noise_level * 2.0,
-        200.0
+        noise_level * 1.5,
+        150.0
     )
 
     print(f"Noise level: {noise_level:.1f}")
@@ -130,6 +130,8 @@ def record_until_silence(
                 stream,
                 status_callback
             )
+
+            silence_threshold = threshold * 0.6
 
             waiting_start_time = time.time()
 
@@ -179,7 +181,7 @@ def record_until_silence(
                 else:
                     audio_chunks.append(audio_chunk)
 
-                    if volume < threshold:
+                    if volume < silence_threshold:
                         if silence_start_time is None:
                             silence_start_time = current_time
 

@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+voice_test_audio/
+*_테스트결과.xlsm
+*_음성테스트결과.xlsm

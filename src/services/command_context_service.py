@@ -1,5 +1,6 @@
 from command import Command
 
+
 def merge_command(command, command_context):
     if command.name == "target":
         position = command.args.get("position") or {}
@@ -22,15 +23,13 @@ def merge_command(command, command_context):
 
 def build_commands(command_context):
     target_command = Command(
-        name="target",
-        args={
-            "position": command_context.pending_target.copy()
-        }
+        "target",
+        position=command_context.pending_target.copy()
     )
 
     machine_command = Command(
-        name="machine",
-        args=command_context.pending_machine.copy()
+        "machine",
+        **command_context.pending_machine.copy()
     )
 
     return [

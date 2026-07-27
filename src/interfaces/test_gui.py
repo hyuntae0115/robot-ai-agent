@@ -421,7 +421,7 @@ def run_gui(robot_state, command_context):
 
     state_text = tk.Text(
         root,
-        height=10,
+        height=14,
         width=80,
         wrap=tk.WORD,
         state="disabled"
