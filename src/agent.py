@@ -78,6 +78,7 @@ def json_to_command(item: dict) -> dict:
             depth = item.get("depth")
             tool = item.get("tool")
             diameter = item.get("diameter")
+            feed = item.get("feed")
 
             if rpm is not None:
                 rpm = int(rpm)
@@ -111,6 +112,17 @@ def json_to_command(item: dict) -> dict:
                             "Diameter must be greater than 0."
                         )
                     }
+                
+            if feed is not None:
+                feed = float(feed)
+
+                if feed <= 0:
+                    return {
+                        "valid": False,
+                        "error": (
+                            "Feed must be greater than 0."
+                        )
+                    }
 
             return {
                 "valid": True,
@@ -121,7 +133,8 @@ def json_to_command(item: dict) -> dict:
                     rpm=rpm,
                     depth=depth,
                     tool=tool,
-                    diameter=diameter
+                    diameter=diameter,
+                    feed=feed
                 )
             }
 

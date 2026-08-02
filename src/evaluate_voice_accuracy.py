@@ -3,9 +3,9 @@
 이 파일을 프로젝트의 src 폴더에 넣고 실행한다.
 
 사용 예:
-    python src/evaluate_voice_accuracy.py "예제 100.xlsm"
-    python src/evaluate_voice_accuracy.py "예제 100.xlsm" --skip-llm
-    python src/evaluate_voice_accuracy.py "예제 100.xlsm" --resume
+    python src/evaluate_voice_accuracy.py "complete_robot_commands_100.xlsx"
+    python src/evaluate_voice_accuracy.py "complete_robot_commands_100.xlsx" --skip-llm
+    python src/evaluate_voice_accuracy.py "complete_robot_commands_100.xlsx" --resume
 """
 
 from __future__ import annotations
@@ -29,21 +29,21 @@ from voice.recognizer import transcribe_audio
 from voice.recorder import SAMPLE_RATE
 
 
-SHEET_NAME = "예시 문장"
+SHEET_NAME = "완전한 명령 100"
 SUMMARY_SHEET = "음성 정확도 요약"
 
 COL_NUMBER = 1
-COL_SENTENCE = 11
-COL_AUDIO = 15
-COL_WHISPER = 16
-COL_NORMALIZED = 17
-COL_CER = 18
-COL_WER = 19
-COL_RAW_EXACT = 20
-COL_NORMALIZED_EXACT = 21
-COL_LLM_JSON = 22
-COL_COMMAND_RESULT = 23
-COL_NOTE = 24
+COL_SENTENCE = 12
+COL_AUDIO = 16
+COL_WHISPER = 17
+COL_NORMALIZED = 18
+COL_CER = 19
+COL_WER = 20
+COL_RAW_EXACT = 21
+COL_NORMALIZED_EXACT = 22
+COL_LLM_JSON = 23
+COL_COMMAND_RESULT = 24
+COL_NOTE = 25
 
 FIELDS = (
     "process",
@@ -55,6 +55,7 @@ FIELDS = (
     "depth",
     "tool",
     "diameter",
+    "feed"
 )
 
 EXPECTED_COLUMNS = {
@@ -67,6 +68,7 @@ EXPECTED_COLUMNS = {
     "depth": 8,
     "tool": 9,
     "diameter": 10,
+    "feed": 11,
 }
 
 HEADER_FILL = PatternFill("solid", fgColor="4472C4")
@@ -214,6 +216,7 @@ def commands_to_actual(
                 "depth",
                 "tool",
                 "diameter",
+                "feed",
             ):
                 if command.args.get(field) is not None:
                     actual[field] = command.args[field]
@@ -274,16 +277,16 @@ def prepare_columns(sheet) -> None:
         cell.alignment = Alignment(horizontal="center", vertical="center")
 
     for letter, width in {
-        "O": 14,
-        "P": 55,
+        "P": 14,
         "Q": 55,
-        "R": 10,
+        "R": 55,
         "S": 10,
-        "T": 16,
-        "U": 18,
-        "V": 55,
-        "W": 16,
-        "X": 65,
+        "T": 10,
+        "U": 16,
+        "V": 18,
+        "W": 55,
+        "X": 16,
+        "Y": 65,
     }.items():
         sheet.column_dimensions[letter].width = width
 
@@ -337,7 +340,7 @@ def write_summary(
         (
             "최종 명령 정확도",
             command_correct / command_tested if command_tested else 0,
-            "9개 필드 완전 일치",
+            "10개 필드 완전 일치",
         ),
     ]
 

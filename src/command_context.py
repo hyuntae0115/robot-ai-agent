@@ -14,7 +14,8 @@ class CommandContext:
             "rpm": None,
             "depth": None,
             "tool": None,
-            "diameter": None
+            "diameter": None,
+            "feed": None
         }
 
     def clear(self):
@@ -32,5 +33,6 @@ class CommandContext:
             "rpm": None,
             "depth": None,
             "tool": None,
-            "diameter": None
+            "diameter": None,
+            "feed": None
         }

@@ -12,6 +12,7 @@ class MachiningSettings:
         self.diameter = None   
         self.depth = 0
         self.rpm = 0
+        self.feed = 0
         
         
         
@@ -31,8 +32,6 @@ class MachiningSettings:
             f"  Tool     : {self.tool}\n"
             f"  Diameter : {self.diameter} mm\n"
             f"  Depth    : {self.depth} mm\n"
-            f"  RPM      : {self.rpm} RPM"
-            
-            
-        
+            f"  RPM      : {self.rpm} RPM/\n"
+            f"  Feed     : {self.feed} mm/min"
         )

@@ -6,6 +6,7 @@ def update_machine_settings(command, robot_state):
     depth = command.args.get("depth")
     tool = command.args.get("tool")
     diameter = command.args.get("diameter")
+    feed = command.args.get("feed")
 
     if position is not None:
         robot_state.target_position = position
@@ -39,3 +40,6 @@ def update_machine_settings(command, robot_state):
 
     if rpm is not None:
         robot_state.rpm = rpm
+
+    if feed is not None:
+        robot_state.feed = feed
