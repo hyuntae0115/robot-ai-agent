@@ -13,5 +13,5 @@ def handle(command, robot_state):
         f"Diameter: {robot_state.diameter} mm\n"
         f"Depth: {robot_state.depth} mm\n"
         f"RPM: {robot_state.rpm} RPM\n"
-        f"Feed: {robot_state.feed} mm/min"
+        f"Feed: {robot_state.feed} mm/rev"
     )

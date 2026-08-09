@@ -70,7 +70,7 @@ Machine command rules:
 * If a value is not provided or cannot be inferred confidently, return null.
 * Do not invent missing values.
 * rpm must be an integer.
-* feed must always be returned in millimeters per minute (mm/min).
+* feed must always be returned in millimeters per minute (mm/rev).
 * depth must always be returned in millimeters.
 * diameter must always be returned in millimeters.
 * If the user gives depth or diameter in cm, multiply it by 10.
@@ -83,7 +83,7 @@ Feed interpretation rules:
 
 * "feed" represents the machining feed rate.
 * Expressions such as "이송속도", "이송 속도", "피드", "feed", and "feed rate" indicate the "feed" field.
-* feed must always be returned in millimeters per minute (mm/min).
+* feed must always be returned in millimeters per minute (mm/rev).
 * If the user gives feed in cm/min, multiply it by 10.
 * If the user gives feed in m/min, multiply it by 1000.
 * If the user gives feed in mm/s, multiply it by 60.
@@ -400,7 +400,7 @@ User:
 ]
 
 User:
-x=100mm, y=200mm, z=30mm 위치에서 알루미늄을 3000rpm, 이송속도 500mm/min, 깊이 5mm, 직경 10mm 엔드밀로 밀링해.
+x=100mm, y=200mm, z=30mm 위치에서 알루미늄을 3000rpm, 이송속도 500mm/rev, 깊이 5mm, 직경 10mm 엔드밀로 밀링해.
 
 [
 {

@@ -26,7 +26,7 @@ FIELD_QUESTIONS = {
     ("machine", "depth"): "가공 깊이를 입력해주세요.",
     ("machine", "tool"): "사용할 공구 종류를 입력해주세요.",
     ("machine", "diameter"): "공구 직경을 입력해주세요.",
-    ("machine", "feed"): "피드(mm/min)를 입력해주세요."
+    ("machine", "feed"): "피드(mm/rev)를 입력해주세요."
 }
 
 
