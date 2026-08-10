@@ -38,13 +38,25 @@ def handle_user_input(
         command = parsed["command"]
 
         if command.name in ("target", "machine"):
-            merge_command(command, command_context)
+            merge_command(
+                command,
+                command_context
+            )
+
             task_command_received = True
             continue
 
         if command.name in ("status", "stop"):
-            result = execute(command, robot_state)
-            log_command(user_input, result)
+            result = execute(
+                command,
+                robot_state
+            )
+
+            log_command(
+                user_input,
+                result
+            )
+
             results.append(result)
 
     if not task_command_received:
@@ -58,7 +70,9 @@ def handle_user_input(
         question = make_clarification_question(
             missing_field
         )
+
         results.append(question)
+
     else:
         results.append(
             "필수 작업정보가 모두 입력되었습니다.\n"
@@ -80,16 +94,38 @@ def execute_pending_command(
         question = make_clarification_question(
             missing_field
         )
+
         return [question]
 
+    # Pending 데이터를 복사해서 Command 생성
+    commands = build_commands(
+        command_context
+    )
+
     results = []
-    commands = build_commands(command_context)
 
-    for command in commands:
-        result = execute(command, robot_state)
-        log_command("GUI 작업 실행", result)
-        results.append(result)
+    try:
+        for command in commands:
+            result = execute(
+                command,
+                robot_state
+            )
 
-    command_context.clear()
+            log_command(
+                "GUI 작업 실행",
+                result
+            )
+
+            results.append(result)
+
+    except Exception:
+        # 실행 도중 오류가 발생하면 Pending을 유지한다.
+        raise
+
+    # 모든 명령이 정상 실행된 후 Applied로 복사
+    command_context.apply_pending()
+
+    # Applied 복사가 끝난 다음 Pending 초기화
+    command_context.clear_pending()
 
     return results

@@ -62,6 +62,7 @@ def run_gui(robot_state, command_context):
             f"  Depth    : {machine['depth']} mm\n"
             f"  Tool     : {machine['tool']}\n"
             f"  Diameter : {machine['diameter']} mm"
+            f"  Feed     : {machine['feed']} mm/rev"
         )
 
     def show_pending_state():
@@ -241,7 +242,7 @@ def run_gui(robot_state, command_context):
             )
 
     def clear_pending_command():
-        command_context.clear()
+        command_context.clear_pending()
 
         show_pending_state()
         show_result("작성 중인 작업을 취소했습니다.")

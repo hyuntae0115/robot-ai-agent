@@ -1,6 +1,3 @@
-from units import normalize_angle
-
-
 def handle(command, robot_state):
     position = command.args.get("position")
 
@@ -8,7 +5,12 @@ def handle(command, robot_state):
         return "Target position is missing"
 
     for key in ("x", "y", "z"):
-        if key in position and position[key] is not None:
-            robot_state.target_position[key] = position[key]
+        value = position.get(key)
 
-    return f"Target position updated: {robot_state.target_position}"
+        if value is not None:
+            robot_state.target_position[key] = value
+
+    return (
+        "Target position updated: "
+        f"{robot_state.target_position}"
+    )

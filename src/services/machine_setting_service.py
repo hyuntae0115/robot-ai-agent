@@ -3,12 +3,13 @@ def update_machine_settings(command, robot_state):
     process = command.args.get("process")
     material = command.args.get("material")
     rpm = command.args.get("rpm")
+    feed = command.args.get("feed")
     depth = command.args.get("depth")
     tool = command.args.get("tool")
     diameter = command.args.get("diameter")
 
     if position is not None:
-        robot_state.target_position = position
+        robot_state.target_position = position.copy()
 
     if material is not None:
         robot_state.material = material
@@ -24,6 +25,7 @@ def update_machine_settings(command, robot_state):
         robot_state.diameter = None
         robot_state.depth = None
         robot_state.rpm = None
+        robot_state.feed = None
 
     if process is not None:
         robot_state.process = process
@@ -39,3 +41,6 @@ def update_machine_settings(command, robot_state):
 
     if rpm is not None:
         robot_state.rpm = rpm
+
+    if feed is not None:
+        robot_state.feed = feed
