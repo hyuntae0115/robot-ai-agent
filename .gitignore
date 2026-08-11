@@ -2,6 +2,7 @@
 __pycache__/
 *.py[codz]
 *$py.class
+__pycache__
 
 # C extensions
 *.so
@@ -218,5 +219,5 @@ __marimo__/
 .streamlit/secrets.toml
 
 voice_test_audio/
-*_Å×½ºÆ®°á°ú.xlsm
-*_À½¼ºÅ×½ºÆ®°á°ú.xlsm
+*_ï¿½×½ï¿½Æ®ï¿½ï¿½ï¿½.xlsm
+*_ï¿½ï¿½ï¿½ï¿½ï¿½×½ï¿½Æ®ï¿½ï¿½ï¿½.xlsm
