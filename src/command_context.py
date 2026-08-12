@@ -8,6 +8,7 @@ class CommandContext:
 
     REQUIRED_MACHINE_FIELDS = (
         "material",
+        "depth",
     )
 
     def __init__(self):

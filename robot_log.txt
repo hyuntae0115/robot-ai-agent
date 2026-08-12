@@ -610,3 +610,233 @@ Diameter: None mm
 Depth: None mm
 RPM: None RPM
 Feed: None mm/rev
+[2026-08-11 21:13:20] input=GUI 작업 실행 | result=Target position updated: {'x': 30, 'y': 50, 'z': 4302}
+[2026-08-11 21:13:20] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 30, 'y': 50, 'z': 4302}
+Material: aluminum
+Process: None
+Tool: None
+Diameter: None mm
+Depth: None mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-11 21:32:09] input=GUI 작업 실행 | result=Target position updated: {'x': 1123, 'y': 0, 'z': 1000}
+[2026-08-11 21:32:09] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1123, 'y': 0, 'z': 1000}
+Material: aluminum
+Process: None
+Tool: None
+Diameter: None mm
+Depth: 4.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-11 21:43:33] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 500, 'z': 250}
+[2026-08-11 21:43:33] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 500, 'z': 250}
+Material: aluminum
+Process: None
+Tool: None
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-11 21:51:12] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 50, 'z': 250}
+[2026-08-11 21:51:12] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 50, 'z': 250}
+Material: aluminum
+Process: None
+Tool: None
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-11 21:51:26] input=GUI 작업 실행 | result=Target position updated: {'x': 1500, 'y': 500, 'z': 1000}
+[2026-08-11 21:51:26] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1500, 'y': 500, 'z': 1000}
+Material: aluminum
+Process: None
+Tool: None
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-11 22:47:47] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 1500, 'z': 900}
+[2026-08-11 22:47:47] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 1500, 'z': 900}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-11 23:23:07] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 1500, 'z': 990}
+[2026-08-11 23:23:07] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 1500, 'z': 990}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-11 23:33:20] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 400, 'z': 1000}
+[2026-08-11 23:33:20] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 400, 'z': 1000}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-11 23:37:20] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 40, 'z': 0.95}
+[2026-08-11 23:37:20] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 40, 'z': 0.95}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 00:06:04] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 40, 'z': 0.95}
+[2026-08-12 00:06:04] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 40, 'z': 0.95}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 00:08:44] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 40, 'z': 950}
+[2026-08-12 00:08:44] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 40, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 00:19:56] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 40, 'z': 950}
+[2026-08-12 00:19:56] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 40, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 00:39:12] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 40, 'z': 950}
+[2026-08-12 00:39:12] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 40, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 00:42:48] input=GUI 작업 실행 | result=Target position updated: {'x': 1000, 'y': 0, 'z': 950}
+[2026-08-12 00:42:48] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1000, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 00:52:52] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 00:52:52] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 4.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 00:55:42] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 00:55:42] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 4.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 00:58:24] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 00:58:24] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: 5.0 mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 01:07:22] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 01:07:22] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 01:12:41] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 01:12:41] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 01:16:25] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 01:16:25] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 01:19:57] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 01:19:57] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 01:21:45] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 01:21:45] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev
+[2026-08-12 01:23:38] input=GUI 작업 실행 | result=Target position updated: {'x': 1150, 'y': 0, 'z': 950}
+[2026-08-12 01:23:38] input=GUI 작업 실행 | result=Machine setting updated
+Position: {'x': 1150, 'y': 0, 'z': 950}
+Material: aluminum
+Process: drilling
+Tool: drill
+Diameter: None mm
+Depth: 5.0 mm
+RPM: None RPM
+Feed: None mm/rev

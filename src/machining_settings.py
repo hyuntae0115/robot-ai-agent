@@ -1,5 +1,4 @@
 class MachiningSettings:
-
     def __init__(self):
         self.target_position = {
             "x": None,
@@ -15,14 +14,21 @@ class MachiningSettings:
         self.rpm = None
         self.feed = None
 
+    @staticmethod
+    def format_position_m(value):
+        if value is None:
+            return "None"
+
+        return f"{value / 1000.0:.3f}"
+
     def get_status(self):
         position = self.target_position
 
         return (
             "Target Position\n"
-            f"  x        : {position['x']} mm\n"
-            f"  y        : {position['y']} mm\n"
-            f"  z        : {position['z']} mm\n"
+            f"  x        : {self.format_position_m(position['x'])} m\n"
+            f"  y        : {self.format_position_m(position['y'])} m\n"
+            f"  z        : {self.format_position_m(position['z'])} m\n"
             "\n"
             "Machining\n"
             f"  Material : {self.material}\n"

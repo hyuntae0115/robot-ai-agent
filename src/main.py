@@ -1,6 +1,6 @@
 from machining_settings import MachiningSettings
 from interfaces.console import run_console
-from src.interfaces.gui import run_gui
+from interfaces.gui import run_gui
 from command_context import CommandContext
     
 def main():
