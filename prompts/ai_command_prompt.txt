@@ -94,7 +94,8 @@ Machine command:
   "tool": "endmill | drill | ballmill | tap | null",
   "diameter": number | null,
   "depth": number | null,
-  "rpm": integer | null
+  "rpm": integer | null,
+  "feed": number | null
 }
 
 Status command:
@@ -152,10 +153,17 @@ User: 숫자는 100, 200, 30이야.
 
 Use "machine" only when the user clearly requests a machining operation or clearly supplies machining conditions for a machining task.
 
-* Always include process, material, rpm, depth, tool, and diameter.
+* Always include process, material, rpm, feed, depth, tool, and diameter.
 * Use null when a value is missing or cannot be inferred confidently.
 * Never invent missing values.
 * rpm must be an integer.
+* feed represents feed per revolution and must be returned in millimeters per revolution (mm/rev).
+* Expressions such as "이송량", "회전당 이송량", "피드", "feed", and "feed per revolution" indicate the feed field.
+* If feed is stated in mm/rev, preserve the numeric value.
+* Do not treat a value in mm/min, cm/min, m/min, or mm/s as feed per revolution unless rpm is also explicitly provided and conversion is unambiguous.
+* When rpm and a feed rate in mm/min are both explicitly provided, calculate feed in mm/rev as: feed = feed_rate_mm_min / rpm.
+* If feed is missing or cannot be identified or converted confidently, return null.
+* Do not infer feed from material, process, rpm, depth, tool, diameter, or target position.
 * depth and diameter must be returned in millimeters.
 * Convert cm to mm by multiplying by 10.
 * Convert m to mm by multiplying by 1000.
@@ -214,7 +222,8 @@ User: 구리를 1200rpm으로 드릴링해줘.
     "tool": "drill",
     "diameter": null,
     "depth": null,
-    "rpm": 1200
+    "rpm": 1200,
+    "feed": null
   }
 ]
 
@@ -227,7 +236,8 @@ User: 몰리브덴을 엔드밀로 깊이 5mm 밀링해줘.
     "tool": "endmill",
     "diameter": null,
     "depth": 5,
-    "rpm": null
+    "rpm": null,
+    "feed": null
   }
 ]
 
@@ -240,7 +250,8 @@ User: PVC에 탭 가공해줘.
     "tool": "tap",
     "diameter": null,
     "depth": null,
-    "rpm": null
+    "rpm": null,
+    "feed": null
   }
 ]
 
@@ -300,7 +311,7 @@ General process rules:
 * An endmill or ballmill can imply milling in a clear machining request.
 * A tap tool can imply tapping in a clear machining request.
 * Generic 가공해줘, machine, or process establishes machining intent but does not identify a specific process.
-* Material, rpm, depth, diameter, or coordinates alone must not determine a process.
+* Material, rpm, feed, depth, diameter, or coordinates alone must not determine a process.
 * Preserve an explicitly stated process and tool even when they conflict.
 * If the process is ambiguous, use null.
 
@@ -396,7 +407,8 @@ User: x=10cm, y=20cm, z=3cm 위치에서 알루미늄에 직경 5mm, 깊이 20mm
     "tool": "drill",
     "diameter": 5,
     "depth": 20,
-    "rpm": null
+    "rpm": null,
+    "feed": null
   }
 ]
 
@@ -413,7 +425,8 @@ User: 알루미늄을 3000rpm으로 깊이 5mm, 엔드밀을 사용해서 가공
     "tool": "endmill",
     "diameter": null,
     "depth": 5,
-    "rpm": 3000
+    "rpm": 3000,
+    "feed": null
   }
 ]
 
@@ -426,7 +439,8 @@ User: 스텐판에 5파이 구멍을 깊이 20mm로 뚫어.
     "tool": "drill",
     "diameter": 5,
     "depth": 20,
-    "rpm": null
+    "rpm": null,
+    "feed": null
   }
 ]
 
@@ -439,7 +453,8 @@ User: 구멍 뚫어줘.
     "tool": "drill",
     "diameter": null,
     "depth": null,
-    "rpm": null
+    "rpm": null,
+    "feed": null
   }
 ]
 
@@ -452,7 +467,22 @@ User: SUS304를 2500rpm으로 가공해.
     "tool": null,
     "diameter": null,
     "depth": null,
-    "rpm": 2500
+    "rpm": 2500,
+    "feed": null
+  }
+]
+
+User: 알루미늄을 2000rpm, 이송량 0.15mm/rev로 드릴링해줘.
+[
+  {
+    "command": "machine",
+    "material": "aluminum",
+    "process": "drilling",
+    "tool": "drill",
+    "diameter": null,
+    "depth": null,
+    "rpm": 2000,
+    "feed": 0.15
   }
 ]
 
@@ -470,6 +500,7 @@ Before returning the result, verify all of the following:
 6. Target is not inferred from unrelated numbers.
 7. Missing values are null and were not invented.
 8. Every returned key and value follows the schemas above.
+9. Machine commands always include feed, using mm/rev or null.
 
 ==================================================
 14. OUTPUT RULES
