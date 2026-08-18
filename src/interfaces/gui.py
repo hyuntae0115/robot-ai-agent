@@ -5,7 +5,7 @@ import tkinter as tk
 import customtkinter as ctk
 
 from controller import execute_pending_command, handle_user_input
-from isaac_client import send_drilling_command
+from simulation.isaac_client import send_drilling_command
 from voice import listen_voice
 
 
