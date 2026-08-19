@@ -158,7 +158,14 @@ class ChatPanel(Panel):
             "#5E3E9D",
             "robot_action_agent.png",
         ),
-        "system": ("Robot AI Agent", "#EEF3F9", "#334155", None),
+        # 시작 안내, LLM JSON, 일반 시스템 메시지도 파란 명령 해석
+        # Agent가 설명하는 것으로 통일한다.
+        "system": (
+            "음성 명령 Agent",
+            "#EEF3FF",
+            "#244E86",
+            "voice_command_agent.png",
+        ),
     }
 
     ICON_DIRECTORIES = (
